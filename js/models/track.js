@@ -4,10 +4,22 @@
 define([
     'underscore',
     'backbone',
-    'underscore',
-    ], function(_, Backbone){
+    'jquery',
+    'soundcloud_sdk',
+    'soundcloud_api',
+    ], function(_, Backbone, $,  soundcloud_sdk, soundcloud_api){
             var Track = Backbone.Model.extend();
 
+    SC.initialize({
+        client_id: 'E8IqLGTYxHll6SyaM7LKrMzKveWkcrjg'
+    });
+
+// find all sounds of buskers licensed under 'creative commons share alike'
+    SC.get('/tracks', {
+        q: 'buskers', license: 'cc-by-sa'
+    }).then(function(tracks) {
+        console.log(tracks);
+    });
             // making use of the module pattern
     return Track;
 });

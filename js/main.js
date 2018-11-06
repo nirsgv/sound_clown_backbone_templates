@@ -8,7 +8,9 @@ require.config({
    paths: {
        jquery: LIB_PATH+ 'jquery-min',
        underscore: LIB_PATH+ 'underscore-min',
-       backbone: LIB_PATH+ 'backbone-min'
+       backbone: LIB_PATH+ 'backbone-min',
+       soundcloud_sdk: 'https://connect.soundcloud.com/sdk/sdk-3.3.0',
+       soundcloud_api: 'https://w.soundcloud.com/player/api',
    }
 });
 
