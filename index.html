@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<!-- something goes here -->
-<script src="js/lib/jquery-min.js"></script>
-<script src="js/lib/underscore-min.js"></script>
-<script src="js/lib/backbone-min.js"></script>
-<script data-main="js/main" src="scripts/lib/require.js"></script>
+
+    <div id="container">
+
+    </div>
+
+<!-- data-main specifies the main entry point of the application -->
+<!-- telling require.js that it should load the file main.js located in the js folder, this file will only one script reference -->
+<script src="js/lib/require.js" data-main="js/main"></script>
 </body>
 </html>
