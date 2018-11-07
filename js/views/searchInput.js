@@ -7,27 +7,39 @@ define([
     'generalUtils',
 ], function( $, _, Backbone, fetchData, generalUtils ){
 
+    var SearchInputModel = Backbone.Model.extend();
+
+    var searchInputModel = new SearchInputModel({currentString: ''});
+
     var SearchInputView = Backbone.View.extend({
         el: 'input',
         attributes: {
-          className: 'asfsdf',
-            id: 'wer'
+            className: 'click',
+            id: 'click'
         },
         events: {
-            "click .click": "onClickHandler"
+            "click .click": "onClickHandler",
+            "input .textInput": "onInputChangeHandler"
         },
 
         initialize: function(){
         },
 
         onClickHandler: function(){
-            generalUtils.alertSomething();
-            fetchData.getTracks('aphex twin').then((res)=>{console.log(res)});
+            generalUtils.consoleLogSomething('something');
+            fetchData.getTracks(searchInputModel.currentString).then((res)=>{console.log(res)});
+        },
 
+        onInputChangeHandler: function(e){
+            console.log(e.target.value);
+            searchInputModel.currentString = e.target.value;
+            console.log(searchInputModel.currentString);
         },
 
         render: function(){
-            this.$el.html("<button class='click'>click</button>");
+            this.$el.html(
+                "<input class='textInput' placeholder='Write something...'/>" +
+                "<button class='click'>click</button>");
 
             return this;
         }
@@ -36,10 +48,10 @@ define([
 
     var searchInputView = new SearchInputView({
         el: "#main",
-        title: 'song1'
+        model: 'song1'
     });
 
-    searchInputView.render({className:"asdasd"});
+    searchInputView.render({asd:"asdasd"});
 
 
     return SearchInputView;

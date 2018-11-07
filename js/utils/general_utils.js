@@ -8,8 +8,8 @@ define([
 
     };
 
-    var alertSomething = function(){
-        alert('something');
+    var consoleLogSomething = function (par){
+        console.log(par);
     };
 
     var fetchCollectionByName = function (name){
@@ -25,8 +25,7 @@ define([
         initialize,
         fetchCollectionByName,
         fetchItemById,
-        alertSomething
+        consoleLogSomething
     }
 });
 
-//getTracks().then()
