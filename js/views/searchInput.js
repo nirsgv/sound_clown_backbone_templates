@@ -22,7 +22,7 @@ define([
 
         onClickHandler: function(){
             generalUtils.alertSomething();
-            console.log(fetchData.getTracks('aphex twin'));
+            fetchData.getTracks('aphex twin').then((res)=>{console.log(res)});
 
         },
 
