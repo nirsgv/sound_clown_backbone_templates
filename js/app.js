@@ -4,7 +4,10 @@ define([
     'backbone',
     'models/track',
     'views/trackView',
-], function(_, Backbone, Track, TrackView){
+    'constants',
+    'searchInput',
+], function( _, Backbone, Track, TrackView, constants){
+    console.log(constants);
 
     // because this is the app module, it is nice to have an initialize method on it
     // which we can call from the main module
@@ -14,7 +17,6 @@ define([
         var track = new Track({ title: "Track title very good!"});
         var trackView = new TrackView({ el: "#container", model: track });
 
-        trackView.render();
     };
 
     // here we are using the revealing module pattern

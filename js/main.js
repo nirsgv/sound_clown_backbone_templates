@@ -11,6 +11,10 @@ require.config({
        backbone: LIB_PATH+ 'backbone-min',
        soundcloud_sdk: 'https://connect.soundcloud.com/sdk/sdk-3.3.0',
        soundcloud_api: 'https://w.soundcloud.com/player/api',
+       fetchData: 'utils/fetch_data',
+       generalUtils: 'utils/general_utils',
+       constants: 'utils/constants',
+       searchInput: 'views/searchInput'
    }
 });
 

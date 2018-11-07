@@ -5,10 +5,12 @@ define([
     'underscore',
     'backbone',
     'soundcloud_sdk',
-    'soundcloud_api',
+    'soundcloud_api'
 ], function (_, Backbone, soundcloud_sdk, soundcloud_api) {
-    var Track = Backbone.Model.extend();
+    let Track = Backbone.Collection.extend();
 
+
+    // making use of the module pattern
     return Track;
 });
 
