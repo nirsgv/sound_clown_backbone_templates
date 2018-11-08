@@ -16,6 +16,20 @@ define([
 
     };
 
+    var purifySearchResults = function (arr){
+        return Array.isArray(arr) &&
+            arr.map((item) => {
+                return {
+                    id:item.id,
+                    artwork_url:item.artwork_url,
+                    permalink_url:item.permalink_url,
+                    waveform_url:item.waveform_url,
+                    title:item.title
+                }
+            }
+        );
+    };
+
     var fetchItemById = function (id){
 
     };
@@ -25,7 +39,8 @@ define([
         initialize,
         fetchCollectionByName,
         fetchItemById,
-        consoleLogSomething
+        consoleLogSomething,
+        purifySearchResults
     }
 });
 

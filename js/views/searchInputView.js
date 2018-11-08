@@ -7,7 +7,9 @@ define([
     'generalUtils',
     'searchInputModel',
     'currentResultsModel',
-], function( $, _, Backbone, fetchData, generalUtils, searchInputModel, currentResultsModel ){
+    'CurrentResultsCollection',
+    'track',
+], function( $, _, Backbone, fetchData, generalUtils, searchInputModel, currentResultsModel, CurrentResultsCollection, track ){
 
     var SearchInputView = Backbone.View.extend({
         el: 'input',
@@ -24,20 +26,19 @@ define([
         },
 
         onSearchSubmitHandler: function(){
+            this.setCurrentResults(searchInputModel.currentString);
+        },
+
+        setCurrentResults: function(name){
             generalUtils.consoleLogSomething('something');
-            fetchData.getTracks(searchInputModel.currentString).then((res)=>{
-                currentResultsModel.currentResults = res;
-
-                for (var i = 0; i<res.length; i++){
-                    console.log(res[i]);
-                }
-
-                console.log(currentResultsModel.currentResults)
+            fetchData.getTracks(name).then((res)=>{
+                //currentResultsModel.currentResults = generalUtils.purifySearchResults(res);
+                currentResultsModel.set({'currentResults': generalUtils.purifySearchResults(res)});
+                console.log(currentResultsModel.get('currentResults'));
             });
         },
 
         onInputChangeHandler: function(e){
-            console.log(e.target.value);
             searchInputModel.currentString = e.target.value;
             console.log(searchInputModel.currentString);
         },

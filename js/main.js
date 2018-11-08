@@ -16,7 +16,9 @@ require.config({
        constants: 'utils/constants',
        searchInput: 'views/searchInputView',
        searchInputModel: 'models/searchInputModel',
-       currentResultsModel: 'models/currentResultsModel'
+       track: 'models/Track',
+       currentResultsModel: 'models/currentResultsModel',
+       CurrentResultsCollection: 'collections/CurrentResultsCollection'
    }
 });
 

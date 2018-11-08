@@ -4,12 +4,13 @@
 define([
     'underscore',
     'backbone',
-], function (_, Backbone, soundcloud_sdk, soundcloud_api) {
-    var CurrentResultsCollection = Backbone.Collection.extend({Model: Vehicle});
-    var currentResultsCollection = new CurrentResultsCollection({currentResults: []});
+    'track',
+], function (_, Backbone, track) {
+    var CurrentResultsCollection = Backbone.Collection.extend({Model: track, currentResults: []});
+    //var currentResultsCollection = new CurrentResultsCollection({currentResults: []});
 
 
     // making use of the module pattern
-    return currentTracks;
+    return CurrentResultsCollection;
 });
 
