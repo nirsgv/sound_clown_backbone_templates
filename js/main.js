@@ -14,7 +14,9 @@ require.config({
        fetchData: 'utils/fetch_data',
        generalUtils: 'utils/general_utils',
        constants: 'utils/constants',
-       searchInput: 'views/searchInput'
+       searchInput: 'views/searchInputView',
+       searchInputModel: 'models/searchInputModel',
+       currentResultsModel: 'models/currentResultsModel'
    }
 });
 

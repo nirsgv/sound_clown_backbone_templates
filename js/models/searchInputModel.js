@@ -7,8 +7,11 @@ define([
     'soundcloud_sdk',
     'soundcloud_api',
 ], function (_, Backbone, soundcloud_sdk, soundcloud_api) {
-    var Track = Backbone.Model.extend();
 
-    return Track;
+    var SearchInputModel = Backbone.Model.extend();
+
+    var searchInputModel = new SearchInputModel({currentString: ''});
+
+    return searchInputModel;
 });
 

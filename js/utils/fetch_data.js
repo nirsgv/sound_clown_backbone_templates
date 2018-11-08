@@ -8,10 +8,6 @@ define([
     var initialize = function (constants){
         console.log('utils initialized');
         console.log(constants.user_id);
-
-
-
-
     };
 
     var fetchCollectionByName = function (name){
@@ -27,7 +23,8 @@ define([
             client_id: 'E8IqLGTYxHll6SyaM7LKrMzKveWkcrjg'
         });
         return  SC.get('/tracks', {
-            q: queryString, license: 'cc-by-sa'
+            q: queryString,
+            limit: 200
         });
     };
 

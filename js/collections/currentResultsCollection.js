@@ -4,10 +4,9 @@
 define([
     'underscore',
     'backbone',
-    'soundcloud_sdk',
-    'soundcloud_api'
 ], function (_, Backbone, soundcloud_sdk, soundcloud_api) {
-    let currentTracks = Backbone.Collection.extend();
+    var CurrentResultsCollection = Backbone.Collection.extend({Model: Vehicle});
+    var currentResultsCollection = new CurrentResultsCollection({currentResults: []});
 
 
     // making use of the module pattern
