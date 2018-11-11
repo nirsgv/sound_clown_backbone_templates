@@ -5,7 +5,7 @@ define([
     'underscore',
     'backbone',
     'soundcloud_sdk',
-    'soundcloud_api',
+    'soundcloud_api'
 ], function (_, Backbone, soundcloud_sdk, soundcloud_api) {
 
     var SearchInputModel = Backbone.Model.extend();

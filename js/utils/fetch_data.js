@@ -24,7 +24,7 @@ define([
         });
         return  SC.get('/tracks', {
             q: queryString,
-            limit: 200
+            limit: 20
         });
     };
 

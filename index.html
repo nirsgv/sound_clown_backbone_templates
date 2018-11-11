@@ -9,37 +9,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<ul id="searchResults"></ul>
 <main id="main">
-    <!--<section class="search-section">-->
-        <!--<div class="search-control">-->
-            <!--<div class="search-input-wrap">-->
-                <!--<input class="search-control__string input&#45;&#45;no-outline" placeholder="Search" id="search_get_input" type="search"/>-->
-                <!--<span id="input_message" visible="false">Some input here please.</span>-->
-            <!--</div>-->
-            <!--<button class="search-control__button input&#45;&#45;no-outline" id="search_submitter">Go!</button>-->
-        <!--</div>-->
-        <!--<div class="data-toggler-and-display-wrp">-->
-            <!--<ul class="current-results-last-searches-toggler">-->
-                <!--<li id="data_display_header" data-tab-id="data_display" class="current-results-last-searches-toggler__toggle active">Results</li>-->
-                <!--<li id="search_display_header" data-tab-id="search_display" class="current-results-last-searches-toggler__toggle">Last searches</li>-->
-            <!--</ul>-->
-            <!--<ul toggled-results-display class="displayed" id="data_display">-->
-            <!--</ul>-->
-            <!--<ul toggled-results-display class="" id="search_display" hidden></ul>-->
-        <!--</div>-->
-        <!--<div class="paginate-strip">-->
-            <!--<button id="fetch_next">Next results</button>-->
-        <!--</div>-->
-    <!--</section>-->
-    <!--<section class="player-section">-->
-        <!--<div class="play-chosen">-->
-            <!--<div id="image-holder" class="play-chosen__link">-->
-                <!--<div class="play-chosen__image-crop">-->
-                    <!--<img id="track-image" src="assets/img/soundcloud-logo.jpg" alt="" class="play-chosen__image-display" />-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</section>-->
+
 </main>
 <!--<div class="soundcloud-strip">-->
     <!--<iframe id="sc-player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"-->
@@ -49,6 +21,11 @@
 
 <!-- data-main specifies the main entry point of the application -->
 <!-- telling require.js that it should load the file main.js located in the js folder, this file will only one script reference -->
+<script type="text/html" id="vehicleTemplate">
+    <%= track-id %>
+    <button class="delete">Delete</button>
+
+</script>
 <script src="js/lib/require.js" data-main="js/main"></script>
 </body>
 </html>
