@@ -21,30 +21,14 @@ define([
         printResults: function(currentResultsModel){
             console.log(this.el);
             console.log(this.$el);
-            console.log(currentResultsModel.get('currentResults'));
-
-            var source = $('#vehicleTemplate').html();
-            var results = currentResultsModel.get('currentResults').map(t => `<li class="data-display__result" track-id="qwe" >
-                    <span class="data-display__link">${t.title}${source}</span>
-                </li>`).join('');
-            console.log(results);
-
-
-           this.$el.html(results);
 
         },
 
         render: function(){
-            this.$el.html(
-                "<li class='click-me-tmp'> rendered li </li>"
-            );
-
-            return this;
+            return  "<li class='click-me-tmp'> rendered li </li>"
         }
-    });
 
-
-
+});
 
 
 

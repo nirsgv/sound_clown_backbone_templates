@@ -3,8 +3,8 @@ define([
     'jquery',
     'underscore',
     'currentResultsModel',
-    'dot',
-], function( $, _, currentResultsModel ,dot){
+    'searchResultsView'
+], function( $, _, currentResultsModel, SearchResultsView){
 
     var SearchResultsView = Backbone.View.extend({
         el: "#searchResults",
@@ -21,7 +21,8 @@ define([
             console.log(_);
             console.log(this);
             console.log(self);
-            console.log(dot);
+            //console.log(SearchResultView);
+            //console.log(dot);
            // this.model.on("change",function(){console.log(this.get('currentResults'))});
             this.model.on("change",this.printResults, this);
 
@@ -37,15 +38,24 @@ define([
         printResults: function(currentResultsModel){
             console.log(this.el);
             console.log(this.$el);
-            console.log(currentResultsModel.get('currentResults'));
+            console.log(currentResultsModel);
+            console.log(this.model.get('currentResults'));
+            // these two are the same
 
-            var source = $('#vehicleTemplate').html();
-            var results = currentResultsModel.get('currentResults').map(t => `<li class="data-display__result" track-id="qwe" >
-                    <span class="data-display__link">${t.title}${source}</span>
-                </li>`).join('');
+            console.log(this.model.get('currentResults'));
+            var source = $('#searchResultTemplate').html();
+            var template = _.template(source);
+            console.log(template);
+
+            var results = this.model.get('currentResults').map(t => `
+                    <li class="data-display__result" track-id="${t.id}">
+                         <div class="waveform-bkg" style="background-image: url(${t.waveform_url})">
+                            <span class="data-display__link">${t.title}</span>
+                        </div>
+                    </div>`).join('');
             console.log(results);
-
-
+            
+            
            this.$el.html(results);
 
 

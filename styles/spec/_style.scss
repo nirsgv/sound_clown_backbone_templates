@@ -328,3 +328,17 @@ ul {
     content: attr(data-current-action);
   }
 }
+
+
+
+// tmp styles
+#searchResults{
+  max-width: 300px;
+}
+.waveform-bkg {
+  display: block;
+  height: 40px;
+  width: 100%;
+  background-color: #ccc;
+  background-size: contain;
+}

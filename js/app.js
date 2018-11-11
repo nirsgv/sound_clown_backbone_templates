@@ -7,8 +7,8 @@ define([
     'constants',
     'searchInput',
     'currentResultsModel',
-    'searchResultsView'
-], function( _, Backbone, Track, TrackView, constants, searchInput, currentResultsModel, SearchResultsView){
+    'searchResultsView',
+], function( _, Backbone, Track, TrackView, constants, searchInput, currentResultsModel, SearchResultsView ){
     console.log(constants);
     console.log(currentResultsModel);
 
