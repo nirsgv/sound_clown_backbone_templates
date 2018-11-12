@@ -2,7 +2,8 @@
 define([
     'underscore',
     'backbone',
-], function( _, Backbone ){
+    'currentResultsModel',
+], function( _, Backbone, currentResultsModel ){
 
     var initialize = function (constants){
 
@@ -14,6 +15,23 @@ define([
 
     var fetchCollectionByName = function (name){
 
+    };
+
+    var setCurrentResults = function(name){
+        this.consoleLogSomething('something');
+        this.getTracks(name).then((res)=>{
+            currentResultsModel.set({'currentResults': this.purifySearchResults(res)});
+        });
+    };
+
+    var getTracks = function (queryString) {
+        SC.initialize({
+            client_id: 'E8IqLGTYxHll6SyaM7LKrMzKveWkcrjg'
+        });
+        return  SC.get('/tracks', {
+            q: queryString,
+            limit: 20
+        });
     };
 
     var purifySearchResults = function (arr){
@@ -40,7 +58,9 @@ define([
         fetchCollectionByName,
         fetchItemById,
         consoleLogSomething,
-        purifySearchResults
+        purifySearchResults,
+        getTracks,
+        setCurrentResults
     }
 });
 

@@ -2,10 +2,10 @@
 define([
     'jquery',
     'underscore',
+    'fetchData',
+    'generalUtils',
     'currentResultsModel',
-    'searchResultsView',
-    'lastSearchedModel'
-], function( $, _, currentResultsModel, SearchResultsView, LastSearchedModel ){
+], function( $, _, fetchData, generalUtils, currentResultsModel ){
 
     var LastSearchedView = Backbone.View.extend({
         el: "#lastSearched",
@@ -15,16 +15,16 @@ define([
             id: 'abc'
         },
         events: {
-            "click .searched-display__result": "searchLastSearchedTitle"
+            "click .searched-display__result": "searchLastSearchedTitleHandler"
         },
         self: this,
         initialize: function(self){
             this.model.on("change",this.render, this);
         },
 
-        searchLastSearchedTitle: function(e){
-            console.log(e.currentTarget);
-            console.log(e.currentTarget.dataset.searched);
+        searchLastSearchedTitleHandler: function(e){
+            var retreivedTitleForSearch = e.currentTarget.dataset.searched;
+            generalUtils.setCurrentResults(retreivedTitleForSearch);
         },
 
         render: function(){

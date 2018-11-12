@@ -25,7 +25,7 @@ define([
         },
 
         onSearchSubmitHandler: function(){
-            this.setCurrentResults(searchInputModel.get('currentString'));
+            generalUtils.setCurrentResults(searchInputModel.get('currentString'));
             this.setLastSearchedModel(searchInputModel.get('currentString'));
         },
 
@@ -42,13 +42,6 @@ define([
                 modifiedArr.push(removedItem[0]);
             }
             lastSearchedModel.set({'lastSearchedStrings': modifiedArr.join(',')});
-        },
-
-        setCurrentResults: function(name){
-            generalUtils.consoleLogSomething('something');
-            fetchData.getTracks(name).then((res)=>{
-                currentResultsModel.set({'currentResults': generalUtils.purifySearchResults(res)});
-            });
         },
 
         onInputChangeHandler: function(e){
