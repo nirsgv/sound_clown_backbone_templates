@@ -17,8 +17,9 @@ require.config({
        constants: 'utils/constants',
        searchInput: 'views/searchInputView',
        searchResultsView: 'views/searchResultsView',
-       //searchResultView: 'views/searchResultView',
+       searchResultView: 'views/searchResultView',
        searchInputModel: 'models/searchInputModel',
+       lastSearchedModel: 'models/lastSearchedModel',
        track: 'models/Track',
        currentResultsModel: 'models/currentResultsModel',
        CurrentResultsCollection: 'collections/CurrentResultsCollection'
