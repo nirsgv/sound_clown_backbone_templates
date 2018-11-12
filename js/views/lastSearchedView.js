@@ -15,16 +15,16 @@ define([
             id: 'abc'
         },
         events: {
-           // "click .data-display__result": "chooseTrack"
+            "click .searched-display__result": "searchLastSearchedTitle"
         },
         self: this,
         initialize: function(self){
             this.model.on("change",this.render, this);
         },
 
-        chooseTrack: function(e){
+        searchLastSearchedTitle: function(e){
             console.log(e.currentTarget);
-            console.log(e.currentTarget.getAttribute('track-id'));
+            console.log(e.currentTarget.dataset.searched);
         },
 
         render: function(){
@@ -33,7 +33,7 @@ define([
             var lastSearchedArr = this.model.get('lastSearchedStrings').split(',');
             console.log(lastSearchedArr);
             var displayedLastResults = lastSearchedArr.map(s =>
-                `<li class="data-display__result">
+                `<li class="searched-display__result" data-searched="${s}">
                              <span class="data-display__link">${s}</span>
                  </div>`
             ).join('');
