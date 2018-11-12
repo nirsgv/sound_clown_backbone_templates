@@ -4,9 +4,8 @@ define([
     'underscore',
     'currentResultsModel',
     'searchResultsView',
-    'lastSearchedModel',
-    'searchResultView'
-], function( $, _, currentResultsModel, SearchResultsView, LastSearchedModel, searchResultView){
+    'lastSearchedModel'
+], function( $, _, currentResultsModel, SearchResultsView, lastSearchedModel ){
 
     var SearchResultsView = Backbone.View.extend({
         el: "#searchResults",
@@ -23,7 +22,7 @@ define([
             console.log(_);
             console.log(this);
             console.log(self);
-            console.log(LastSearchedModel);
+            console.log(lastSearchedModel);
             //console.log(SearchResultView);
             //console.log(dot);
            // this.model.on("change",function(){console.log(this.get('currentResults'))});

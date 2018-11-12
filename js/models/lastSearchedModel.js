@@ -6,8 +6,8 @@ define([
 
     var LastSearchedModel = Backbone.Model.extend({
         defaults: {
-            LAST_SEARCHED: 'sound_clown.lastSearched',
-            lastSearchedStrings: ['789','456']
+            //LAST_SEARCHED: 'sound_clown.lastSearched',
+            lastSearchedStrings: []
         },
         initialize: function() {
             this.on('change', this.setLocalStorageByModel, this);

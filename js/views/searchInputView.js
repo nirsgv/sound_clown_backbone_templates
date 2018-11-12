@@ -34,16 +34,14 @@ define([
             // check for duplicates failed, add to list, cut list for five items length in total
             if (modifiedArr.indexOf(name) === -1) {
                 modifiedArr.push(name);
-                const lastFiveSearches = modifiedArr.slice(-1 * 5);
-                modifiedArr = lastFiveSearches;
+                modifiedArr = modifiedArr.slice(-1 * 5);
                 // check for duplicates passed, move item to last position
             } else {
                 const hasElementPosition = modifiedArr.indexOf(name);
                 const removedItem = modifiedArr.splice(hasElementPosition, 1);
                 modifiedArr.push(removedItem[0]);
             }
-            var modifiedArrToString = modifiedArr.join(',');
-            lastSearchedModel.set({'lastSearchedStrings': modifiedArrToString});
+            lastSearchedModel.set({'lastSearchedStrings': modifiedArr.join(',')});
         },
 
         setCurrentResults: function(name){
@@ -55,7 +53,6 @@ define([
 
         onInputChangeHandler: function(e){
             searchInputModel.set({'currentString': e.target.value});
-            console.log(searchInputModel);
             console.log(searchInputModel.get('currentString'));
         },
 

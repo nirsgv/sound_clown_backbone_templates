@@ -8,8 +8,9 @@ define([
     'searchInput',
     'currentResultsModel',
     'searchResultsView',
-    'lastSearchedModel'
-], function( _, Backbone, Track, TrackView, constants, searchInput, currentResultsModel, SearchResultsView, lastSearchedModel ){
+    'lastSearchedModel',
+    'LastSearchedView'
+], function( _, Backbone, Track, TrackView, constants, searchInput, currentResultsModel, SearchResultsView, lastSearchedModel, LastSearchedView){
     console.log(constants);
     console.log(currentResultsModel);
 
@@ -22,12 +23,11 @@ define([
         var trackView = new TrackView({ el: "#container", model: track });
         searchInput.render({asd:"asdasd"});
 
-        var searchResultsView = new SearchResultsView({
-            el: "#searchResults",
-            model: currentResultsModel
-        });
-
+        var searchResultsView = new SearchResultsView({el: "#searchResults", model: currentResultsModel});
         searchResultsView.render({});
+
+        var lastSearchedView = new LastSearchedView({el: "#lastSearched", model: lastSearchedModel});
+        lastSearchedView.render({});
 
     };
 
