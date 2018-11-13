@@ -5,15 +5,15 @@ define([
     'currentResultsModel',
 ], function( _, Backbone, currentResultsModel ){
 
-    var initialize = function (constants){
+    var initialize = function(constants){
 
     };
 
-    var consoleLogSomething = function (par){
+    var consoleLogSomething = function(par){
         console.log(par);
     };
 
-    var fetchCollectionByName = function (name){
+    var fetchCollectionByName = function(name){
 
     };
 
@@ -48,15 +48,16 @@ define([
         );
     };
 
-    var fetchItemById = function (id){
-
+    var getTrackById = function (tracks, id) {
+            return tracks.filter(track => track.id === id)[0];
     };
+
     // here we are using the revealing module pattern
     // what we are returning here we expose to the world as public
     return {
         initialize,
         fetchCollectionByName,
-        fetchItemById,
+        getTrackById,
         consoleLogSomething,
         purifySearchResults,
         getTracks,

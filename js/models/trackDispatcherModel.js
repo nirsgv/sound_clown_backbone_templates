@@ -4,13 +4,14 @@
 define([
     'underscore',
     'backbone',
-    'track',
-], function (_, Backbone, track) {
-    //var CurrentResultsCollection = Backbone.Collection.extend({Model: track, currentResults: []});
-    //var currentResultsCollection = new CurrentResultsCollection({currentResults: []});
+    'soundcloud_sdk',
+    'soundcloud_api'
+], function (_, Backbone, soundcloud_sdk, soundcloud_api) {
 
+    var TrackDispatcherModel = Backbone.Model.extend();
 
-    // making use of the module pattern
-    return CurrentResultsCollection;
+    var trackDispatcherModel = new TrackDispatcherModel({currentTrack: {}});
+
+    return trackDispatcherModel;
 });
 

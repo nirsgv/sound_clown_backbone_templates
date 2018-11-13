@@ -3,9 +3,10 @@ define([
     'jquery',
     'underscore',
     'currentResultsModel',
-    'searchResultsView',
-    'lastSearchedModel'
-], function( $, _, currentResultsModel, SearchResultsView, lastSearchedModel ){
+    'lastSearchedModel',
+    'generalUtils',
+    'trackDispatcherModel'
+], function( $, _, currentResultsModel, lastSearchedModel, generalUtils, trackDispatcherModel){
 
     var SearchResultsView = Backbone.View.extend({
         el: "#searchResults",
@@ -22,36 +23,23 @@ define([
             console.log(_);
             console.log(this);
             console.log(self);
+            console.log(this.model);
             console.log(lastSearchedModel);
-            //console.log(SearchResultView);
-            //console.log(dot);
-           // this.model.on("change",function(){console.log(this.get('currentResults'))});
-            this.model.on("change",this.render, this);
+            console.log(trackDispatcherModel);
 
+            this.model.on("change",this.render, this);
+        },
+
+        getTrackById: function (tracks, id) {
+            return tracks.filter(track => track.id === id)[0];
         },
 
         chooseTrack: function(e){
-            console.log(e.currentTarget);
-            console.log(e.currentTarget.getAttribute('track-id'));
-            // console.log(this.attributes);
-            // console.log(currentResultsModel);
-            // console.log(this);
-            // console.log(self);
-
+            var relevantId = Number(e.currentTarget.getAttribute('track-id'));
+            var relevantTracks = this.model.get('currentResults');
+            trackDispatcherModel.set('currentTrack', this.getTrackById(relevantTracks,relevantId));
+            console.log(trackDispatcherModel);
         },
-
-        // printResults: function(currentResultsModel){
-        //     console.log(this.el);
-        //     console.log(this.$el);
-        //     console.log(currentResultsModel);
-        //     console.log(this.model.get('currentResults'));
-        //     // these two are the same
-        //
-        //     console.log(this.model.get('currentResults'));
-        //     var source = $('#searchResultTemplate').html();
-        //     var template = _.template(source);
-        //     console.log(template);
-        // },
 
         render: function(){
             var results = this.model.get('currentResults').map(t => `
@@ -62,20 +50,9 @@ define([
                     </div>`).join('');
             this.$el.html(results);
 
-            // var self = this;
-            // this.model.each(function(venue){
-            //     var view = new VenueView({ model: venue, bus: self.bus });
-            //     self.$el.append(view.render().$el);
-            // });
-            //
             return this;
         }
     });
-
-
-
-
-
 
     return SearchResultsView;
 

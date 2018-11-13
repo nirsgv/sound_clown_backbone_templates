@@ -3,12 +3,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'fetchData',
     'generalUtils',
     'searchInputModel',
     'currentResultsModel',
     'lastSearchedModel'
-], function( $, _, Backbone, fetchData, generalUtils, searchInputModel, currentResultsModel, lastSearchedModel ){
+], function( $, _, Backbone, generalUtils, searchInputModel, currentResultsModel, lastSearchedModel ){
 
     var SearchInputView = Backbone.View.extend({
         el: 'input',
@@ -22,6 +21,7 @@ define([
         },
 
         initialize: function(){
+            console.log(generalUtils);
         },
 
         onSearchSubmitHandler: function(){
@@ -63,10 +63,7 @@ define([
         model: currentResultsModel
     });
 
-
-
     return searchInputView;
-
 
 });
 

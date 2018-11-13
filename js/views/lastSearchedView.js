@@ -2,10 +2,9 @@
 define([
     'jquery',
     'underscore',
-    'fetchData',
     'generalUtils',
     'currentResultsModel',
-], function( $, _, fetchData, generalUtils, currentResultsModel ){
+], function( $, _, generalUtils, currentResultsModel ){
 
     var LastSearchedView = Backbone.View.extend({
         el: "#lastSearched",
