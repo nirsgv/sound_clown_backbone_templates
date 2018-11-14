@@ -3,8 +3,8 @@ define([
     'jquery',
     'underscore',
     'generalUtils',
-    'currentResultsModel',
-], function( $, _, generalUtils, currentResultsModel ){
+    'toggleSearchResultsModel',
+], function( $, _, generalUtils, toggleSearchResultsModel ){
 
     var LastSearchedView = Backbone.View.extend({
         el: "#lastSearched",
@@ -19,6 +19,12 @@ define([
         self: this,
         initialize: function(self){
             this.model.on("change",this.render, this);
+            toggleSearchResultsModel.on("change",this.tmpSomething, this);
+        },
+
+        tmpSomething: function(){
+            console.error(toggleSearchResultsModel);
+            this.render();
         },
 
         searchLastSearchedTitleHandler: function(e){
@@ -27,16 +33,15 @@ define([
         },
 
         render: function(){
-            console.log('LastSearchedView rendered');
-            console.log(this.model.get('lastSearchedStrings'));
             var lastSearchedArr = this.model.get('lastSearchedStrings').split(',').reverse();
             var displayedLastResults = lastSearchedArr.map(s =>
                 `<li class="searched-display__result" data-searched="${s}">
                              <span class="data-display__link">${s}</span>
                  </div>`
             ).join('');
-            console.log(displayedLastResults);
-            this.$el.html(displayedLastResults);
+            var container = `<ul id="lastSearched" class="${toggleSearchResultsModel.get('currentlyToggled')==='searched' ? 'active' : ''}">${displayedLastResults}</ul>`;
+            container.innerHTML = displayedLastResults;
+            this.$el.html(container);
 
             return this;
         }

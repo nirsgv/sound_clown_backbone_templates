@@ -5,8 +5,8 @@ define([
     'currentResultsModel',
     'lastSearchedModel',
     'trackDispatcherModel',
-    'generalUtils'
-], function( $, _, currentResultsModel, lastSearchedModel, trackDispatcherModel, generalUtils){
+    'toggleSearchResultsModel'
+], function( $, _, currentResultsModel, lastSearchedModel, trackDispatcherModel, toggleSearchResultsModel){
 
     var SearchResultsView = Backbone.View.extend({
         el: "#searchResults",
@@ -15,20 +15,20 @@ define([
             className: 'dngnddn',
             id: 'dsfhfhb'
         },
+
         events: {
             "click .data-display__result": "dispatchTrackIntoImageDispatcher"
         },
-        self: this,
-        initialize: function(self){
-            // console.log(generalUtils);
-            // console.log(_);
-            // console.log(this);
-            // console.log(self);
-            // console.log(this.model);
-            // console.log(lastSearchedModel);
-            // console.log(trackDispatcherModel);
 
+        self: this,
+        initialize: function(){
             this.model.on("change",this.render, this);
+            toggleSearchResultsModel.on("change",this.tmpSomething, this);
+        },
+
+        tmpSomething: function(){
+            console.error(toggleSearchResultsModel);
+            this.render();
         },
 
         getTrackById: function (tracks, id) {
@@ -115,7 +115,9 @@ define([
                             <span class="data-display__link">${t.title}</span>
                         </div>
                     </div>`).join('');
-            this.$el.html(results);
+            var container = `<ul id="searchResults" class="${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : ''}">${results}</ul>`;
+            container.innerHTML = results;
+            this.$el.html(container);
 
             return this;
         }

@@ -43,9 +43,9 @@ define([
         searchInput.render({asd:"asdasd"});
         var toggleSearchedResultsView = new ToggleSearchedResultsView({el: "#toggleSearchResultsViews", model: toggleSearchResultsModel});
         toggleSearchedResultsView.render();
-        var searchResultsView = new SearchResultsView({el: "#searchResults", model: currentResultsModel});
+        var searchResultsView = new SearchResultsView({el: "#searchResultsContainer", model: currentResultsModel});
         searchResultsView.render();
-        var lastSearchedView = new LastSearchedView({el: "#lastSearched", model: lastSearchedModel});
+        var lastSearchedView = new LastSearchedView({el: "#lastSearchedContainer", model: lastSearchedModel});
         lastSearchedView.render({});
         var trackDispatcherView = new TrackDispatcherView({el: "#track-dispatcher", model: trackDispatcherModel});
         trackDispatcherView.render();

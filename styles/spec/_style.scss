@@ -379,3 +379,10 @@ span.data-display__link {
 li.selected{
   color: orange;
 }
+
+#searchResults, #lastSearched{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
