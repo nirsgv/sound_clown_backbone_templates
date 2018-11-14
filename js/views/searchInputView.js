@@ -8,7 +8,6 @@ define([
     'currentResultsModel',
     'lastSearchedModel'
 ], function( $, _, Backbone, generalUtils, searchInputModel, currentResultsModel, lastSearchedModel ){
-
     var SearchInputView = Backbone.View.extend({
         el: 'input',
         attributes: {

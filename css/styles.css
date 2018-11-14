@@ -28,19 +28,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0; }
 
-main {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 16.6rem);
-  margin: 0 auto;
-  flex-direction: column; }
-  @media screen and (min-width: 376px) {
-    main {
-      flex-direction: row;
-      width: 80rem;
-      height: 50rem; } }
-
 section {
   width: 40rem;
   display: inline-block;
@@ -297,7 +284,9 @@ ul {
     content: attr(data-current-action); }
 
 #searchResults {
-  max-width: 300px; }
+  max-width: 300px;
+  display: inline-block;
+  float: left; }
 
 .waveform-bkg {
   display: block;
@@ -305,3 +294,9 @@ ul {
   width: 100%;
   background-color: #ccc;
   background-size: contain; }
+
+#lastSearched {
+  display: inline-block; }
+
+#track-dispatcher {
+  float: right; }

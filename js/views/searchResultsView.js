@@ -4,9 +4,10 @@ define([
     'underscore',
     'currentResultsModel',
     'lastSearchedModel',
-    'generalUtils',
-    'trackDispatcherModel'
-], function( $, _, currentResultsModel, lastSearchedModel, generalUtils, trackDispatcherModel){
+    'trackDispatcherModel',
+    'generalUtils'
+], function( $, _, currentResultsModel, lastSearchedModel, trackDispatcherModel, generalUtils){
+
 
     var SearchResultsView = Backbone.View.extend({
         el: "#searchResults",
@@ -20,6 +21,7 @@ define([
         },
         self: this,
         initialize: function(self){
+            console.log(generalUtils);
             console.log(_);
             console.log(this);
             console.log(self);
@@ -39,6 +41,7 @@ define([
             var relevantTracks = this.model.get('currentResults');
             trackDispatcherModel.set('currentTrack', this.getTrackById(relevantTracks,relevantId));
             console.log(trackDispatcherModel);
+            console.log(generalUtils);
         },
 
         render: function(){

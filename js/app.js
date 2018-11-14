@@ -10,7 +10,9 @@ define([
     'TrackDispatcherView',
     'lastSearchedModel',
     'LastSearchedView',
-    'generalUtils'
+    'generalUtils',
+    'trackPlayerView',
+    'trackPlayerModel'
 ], function ( _,
              Backbone,
              constants,
@@ -21,7 +23,9 @@ define([
              TrackDispatcherView,
              lastSearchedModel,
              LastSearchedView,
-             generalUtils
+             generalUtils,
+             TrackPlayerView,
+             trackPlayerModel
     ){
     console.log(constants);
     console.log(currentResultsModel);
@@ -34,11 +38,13 @@ define([
     var initialize = function (){
         searchInput.render({asd:"asdasd"});
         var searchResultsView = new SearchResultsView({el: "#searchResults", model: currentResultsModel});
-        searchResultsView.render({});
+        searchResultsView.render();
         var lastSearchedView = new LastSearchedView({el: "#lastSearched", model: lastSearchedModel});
         lastSearchedView.render({});
         var trackDispatcherView = new TrackDispatcherView({el: "#track-dispatcher", model: trackDispatcherModel});
-        trackDispatcherView.render({});
+        trackDispatcherView.render();
+        var trackPlayerView = new TrackPlayerView({el: "#soundcloud-strip", model: trackPlayerModel});
+        trackPlayerView.render();
 
     };
 

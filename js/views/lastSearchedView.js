@@ -29,8 +29,7 @@ define([
         render: function(){
             console.log('LastSearchedView rendered');
             console.log(this.model.get('lastSearchedStrings'));
-            var lastSearchedArr = this.model.get('lastSearchedStrings').split(',');
-            console.log(lastSearchedArr);
+            var lastSearchedArr = this.model.get('lastSearchedStrings').split(',').reverse();
             var displayedLastResults = lastSearchedArr.map(s =>
                 `<li class="searched-display__result" data-searched="${s}">
                              <span class="data-display__link">${s}</span>

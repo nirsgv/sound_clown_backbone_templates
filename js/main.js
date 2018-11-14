@@ -21,9 +21,11 @@ require.config({
        searchResultsView: 'views/searchResultsView',
        LastSearchedView: 'views/LastSearchedView',
        TrackDispatcherView: 'views/trackDispatcherView',
+       trackPlayerView: 'views/trackPlayerView',
 
        searchInputModel: 'models/searchInputModel',
        trackDispatcherModel: 'models/trackDispatcherModel',
+       trackPlayerModel: 'models/trackPlayerModel',
        lastSearchedModel: 'models/lastSearchedModel',
        currentResultsModel: 'models/currentResultsModel',
        CurrentResultsCollection: 'collections/CurrentResultsCollection'

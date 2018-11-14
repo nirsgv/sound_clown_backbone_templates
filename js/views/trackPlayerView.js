@@ -6,8 +6,8 @@ define([
     'currentResultsModel',
 ], function( $, _, generalUtils, currentResultsModel ){
 
-    var TrackDispatcherView = Backbone.View.extend({
-        el: "#lastSearched",
+    var TrackPlayerView = Backbone.View.extend({
+        el: "#soundcloud-strip",
         //model: lastSearchedModel,
         attributes: {
             className: 'img-dispatcher',
@@ -17,8 +17,8 @@ define([
         },
         self: this,
         initialize: function(self){
+            console.log(this.model);
             this.model.on("change",this.modelChanged, this);
-            console.log(generalUtils);
         },
 
         modelChanged: function(){
@@ -43,20 +43,19 @@ define([
         },
 
         render: function(){
-            var displayedLastResults = `
-                                <div class="img-wrap" data-id="${this.getItemValueByProperty('id')}"></div>
-                                    <h2>${this.getItemValueByProperty('title')}</h2>
-                                    <img class="${this.attributes.className}" src="${this.getImageSrc('artwork_url')}"/>
-                                </div>
+            var displayedPlayer = `
+                <iframe id="sc-player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&amp;{ ADD YOUR PARAMETERS HERE }">
+                </iframe>
                                         `;
 
             this.$el.html(
-                displayedLastResults
+                displayedPlayer
             );
 
             return this;
         }
     });
-    return TrackDispatcherView;
+    return TrackPlayerView;
 });
 
