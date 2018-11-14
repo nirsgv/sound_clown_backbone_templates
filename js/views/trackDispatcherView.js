@@ -7,7 +7,7 @@ define([
 ], function( $, _, generalUtils, trackPlayerModel ){
 
     var TrackDispatcherView = Backbone.View.extend({
-        el: "#lastSearched",
+        el: "#toggleSearchResultsViews",
         //model: lastSearchedModel,
         attributes: {
             className: 'img-dispatcher',

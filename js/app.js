@@ -12,7 +12,9 @@ define([
     'LastSearchedView',
     'generalUtils',
     'trackPlayerView',
-    'trackPlayerModel'
+    'trackPlayerModel',
+    'toggleSearchedResultsView',
+    'toggleSearchResultsModel'
 ], function ( _,
              Backbone,
              constants,
@@ -25,7 +27,9 @@ define([
              LastSearchedView,
              generalUtils,
              TrackPlayerView,
-             trackPlayerModel
+             trackPlayerModel,
+             ToggleSearchedResultsView,
+             toggleSearchResultsModel
     ){
     console.log(constants);
     console.log(currentResultsModel);
@@ -37,6 +41,8 @@ define([
 
     var initialize = function (){
         searchInput.render({asd:"asdasd"});
+        var toggleSearchedResultsView = new ToggleSearchedResultsView({el: "#toggleSearchResultsViews", model: toggleSearchResultsModel});
+        toggleSearchedResultsView.render();
         var searchResultsView = new SearchResultsView({el: "#searchResults", model: currentResultsModel});
         searchResultsView.render();
         var lastSearchedView = new LastSearchedView({el: "#lastSearched", model: lastSearchedModel});

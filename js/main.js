@@ -22,13 +22,15 @@ require.config({
        LastSearchedView: 'views/LastSearchedView',
        TrackDispatcherView: 'views/trackDispatcherView',
        trackPlayerView: 'views/trackPlayerView',
+       toggleSearchedResultsView: 'views/toggleSearchedResultsView',
 
        searchInputModel: 'models/searchInputModel',
        trackDispatcherModel: 'models/trackDispatcherModel',
        trackPlayerModel: 'models/trackPlayerModel',
        lastSearchedModel: 'models/lastSearchedModel',
        currentResultsModel: 'models/currentResultsModel',
-       CurrentResultsCollection: 'collections/CurrentResultsCollection'
+       CurrentResultsCollection: 'collections/CurrentResultsCollection',
+       toggleSearchResultsModel: 'models/toggleSearchResultsModel',
    }
 });
 
