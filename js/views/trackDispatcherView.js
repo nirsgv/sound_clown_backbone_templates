@@ -3,8 +3,8 @@ define([
     'jquery',
     'underscore',
     'generalUtils',
-    'currentResultsModel',
-], function( $, _, generalUtils, currentResultsModel ){
+    'trackPlayerModel',
+], function( $, _, generalUtils, trackPlayerModel ){
 
     var TrackDispatcherView = Backbone.View.extend({
         el: "#lastSearched",
@@ -13,12 +13,21 @@ define([
             className: 'img-dispatcher',
         },
         events: {
-           // "click .searched-display__result": "searchLastSearchedTitleHandler"
+            "click .img-dispatcher": "dispatchTrackToPlayer"
         },
         self: this,
         initialize: function(self){
             this.model.on("change",this.modelChanged, this);
             console.log(generalUtils);
+        },
+
+        dispatchTrackToPlayer: function(){
+            console.log(this.model.get('currentTrack'));
+            //console.log('before change: ',trackPlayerModel);
+            trackPlayerModel.set(this.model.get('currentTrack'));
+            //console.log('after change: ',trackPlayerModel);
+            console.log(this.model);
+            console.log(this.attributes);
         },
 
         modelChanged: function(){

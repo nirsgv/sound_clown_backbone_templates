@@ -10,7 +10,7 @@ define([
         el: "#soundcloud-strip",
         //model: lastSearchedModel,
         attributes: {
-            className: 'img-dispatcher',
+            className: 'track-player',
         },
         events: {
            // "click .searched-display__result": "searchLastSearchedTitleHandler"
@@ -22,6 +22,7 @@ define([
         },
 
         modelChanged: function(){
+            console.log(this);
             console.log(this.model.get('currentTrack'));
             console.log(this.attributes);
             console.log(generalUtils);
@@ -44,8 +45,9 @@ define([
 
         render: function(){
             var displayedPlayer = `
-                <iframe id="sc-player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&amp;{ ADD YOUR PARAMETERS HERE }">
+                <iframe class="${this.attributes.className}" id="sc-player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                        src="https://w.soundcloud.com/player/?url=${this.model.get('permalink_url')}">
+                        <!--src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&amp;{ ADD YOUR PARAMETERS HERE }">-->
                 </iframe>
                                         `;
 
