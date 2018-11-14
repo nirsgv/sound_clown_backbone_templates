@@ -39,7 +39,7 @@ define([
                              <span class="data-display__link">${s}</span>
                  </div>`
             ).join('');
-            var container = `<ul id="lastSearched" class="${toggleSearchResultsModel.get('currentlyToggled')==='searched' ? 'active' : ''}">${displayedLastResults}</ul>`;
+            var container = `<ul id="lastSearched" class="${toggleSearchResultsModel.get('currentlyToggled')==='searched' ? 'active' : 'inactive'}">${displayedLastResults}</ul>`;
             container.innerHTML = displayedLastResults;
             this.$el.html(container);
 

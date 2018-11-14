@@ -49,10 +49,11 @@ define([
         },
 
         render: function(){
-            this.$el.html(
-                "<input class='textInput' placeholder='Write something...'/>" +
-                "<button class='click'>click</button>"
-            );
+            var content = `<section id="input-container">
+                             <input class='textInput' placeholder='Write something...'/>
+                             <button class='click'>click</button>
+                           </section>`;
+            this.$el.prepend(content);
             return this;
         }
     });

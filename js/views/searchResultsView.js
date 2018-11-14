@@ -115,7 +115,7 @@ define([
                             <span class="data-display__link">${t.title}</span>
                         </div>
                     </div>`).join('');
-            var container = `<ul id="searchResults" class="${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : ''}">${results}</ul>`;
+            var container = `<ul id="searchResults" class="${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : 'inactive'}">${results}</ul>`;
             container.innerHTML = results;
             this.$el.html(container);
 
