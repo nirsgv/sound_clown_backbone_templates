@@ -300,3 +300,6 @@ ul {
 
 #track-dispatcher {
   float: right; }
+
+span.data-display__link {
+  pointer-events: none; }
