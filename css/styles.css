@@ -285,7 +285,10 @@ ul {
 
 #main {
   max-width: 80rem;
-  margin: 0 auto; }
+  margin: 2rem auto 0 auto; }
+
+#search-with-toggle-strip {
+  margin-bottom: 1rem; }
 
 .waveform-bkg {
   display: block;
@@ -347,7 +350,8 @@ li.selected {
   #searchResults > li, #lastSearched > li {
     position: relative;
     height: 4rem;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    cursor: pointer; }
     #searchResults > li span.data-display__link, #lastSearched > li span.data-display__link {
       pointer-events: none;
       position: absolute;
@@ -363,3 +367,13 @@ li.selected {
   padding: 0;
   margin: 0;
   bottom: 0; }
+
+#input-container, #toggleSearchResultsViews {
+  max-width: 40rem;
+  display: inline-block; }
+
+#toggleSearchResultsViews {
+  float: right; }
+  #toggleSearchResultsViews > li {
+    display: inline-block;
+    margin-right: 0.6rem; }

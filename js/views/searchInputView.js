@@ -59,7 +59,7 @@ define([
     });
 
     var searchInputView = new SearchInputView({
-        el: "#main",
+        el: "#search-with-toggle-strip",
         model: currentResultsModel
     });
 

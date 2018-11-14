@@ -336,7 +336,11 @@ ul {
 #main{
   //outline: 4px dashed blue;
   max-width: 80rem;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
+}
+
+#search-with-toggle-strip{
+  margin-bottom: 1rem;
 }
 
 .waveform-bkg {
@@ -413,6 +417,7 @@ li.selected{
     position: relative;
     height: 4rem;
     margin-bottom: 2rem;
+    cursor: pointer;
     span.data-display__link{
       pointer-events: none;
       position: absolute;
@@ -430,4 +435,17 @@ li.selected{
   padding: 0;
   margin: 0;
   bottom: 0;
+}
+
+#input-container,#toggleSearchResultsViews{
+  max-width: 40rem;
+  display: inline-block;
+}
+
+#toggleSearchResultsViews{
+  float: right;
+  &>li{
+    display: inline-block;
+    margin-right: 0.6rem;
+  }
 }
