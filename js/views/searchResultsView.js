@@ -80,7 +80,7 @@ define([
             return [width, height];
         },
 
-        animateClonedIntoDestination: function( startingElem, destinationElem ) {
+        animateClonedIntoDestination: function( startingElem, destinationElem, e ) {
             const startPosition = this.getOffset(startingElem);
             const destination = this.getCenter(destinationElem);
             console.log(destinationElem);
@@ -92,6 +92,7 @@ define([
             clonedElemNode.setAttribute('id', uniqueId);
             clonedElemNode.setAttribute('style', `position:fixed;left:${startPosition[0]}px;top:${startPosition[1]}px;`);
             // clonedElemNode.trackId = id;
+            clonedElemNode.aaa = 'bbb';
             clonedElemNode.addEventListener('transitionend', this.cloneTransitionEnded, false);
             const realXcenter = destination[0] - elemSize[0] / 2;
             const realYcenter = destination[1] - elemSize[1] / 2;
@@ -100,9 +101,11 @@ define([
              window.setTimeout(function () {
                  catchClonedElement.setAttribute('style', `position:fixed;left:${realXcenter}px;top:${realYcenter}px;`);
              }, 0);
+
+
         },
         cloneTransitionEnded: function (event) {
-            //controller.loadTrack(event.target.trackId);
+            event.target.removeEventListener('transitionend', this.cloneTransitionEnded, false);
             event.target.remove();
         },
         render: function(){

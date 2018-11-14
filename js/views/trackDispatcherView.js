@@ -53,9 +53,9 @@ define([
 
         render: function(){
             var displayedLastResults = `
-                                <div class="img-wrap" data-id="${this.getItemValueByProperty('id')}"></div>
+                                <div class="img-wrap" data-id="${this.getItemValueByProperty('id')}">
                                     <h2>${this.getItemValueByProperty('title')}</h2>
-                                    <img class="${this.attributes.className}" src="${this.getImageSrc('artwork_url')}"/>
+                                    <img class="${this.attributes.className} animate-img-entrance" src="${this.getImageSrc('artwork_url')}" />
                                 </div>
                                         `;
 

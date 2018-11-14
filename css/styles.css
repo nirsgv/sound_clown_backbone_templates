@@ -301,5 +301,21 @@ ul {
 #track-dispatcher {
   float: right; }
 
+.img-wrap > h2 {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  left: 10px;
+  color: #ddd;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 4px 12px; }
+
+.img-wrap > h2:empty {
+  display: none; }
+
+img.img-dispatcher {
+  width: 100%;
+  height: 100%; }
+
 span.data-display__link {
   pointer-events: none; }
