@@ -28,7 +28,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0; }
 
-section {
+section > ul {
   width: 40rem;
   display: inline-block;
   margin: 0;
@@ -283,23 +283,40 @@ ul {
   #play_pause_toggle_button:after {
     content: attr(data-current-action); }
 
-#searchResults {
-  max-width: 300px;
-  display: inline-block;
-  float: left; }
+#main {
+  max-width: 80rem;
+  margin: 0 auto; }
 
 .waveform-bkg {
   display: block;
-  height: 40px;
+  height: 100%;
   width: 100%;
-  background-color: #ccc;
-  background-size: contain; }
+  background-color: #e4e4e4;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 #lastSearched {
   display: inline-block; }
 
+#items-holder {
+  position: relative;
+  display: inline-block;
+  width: 36rem;
+  height: 40rem;
+  overflow-y: auto; }
+
 #track-dispatcher {
-  float: right; }
+  position: relative;
+  display: inline-block;
+  width: 40rem;
+  height: 40rem;
+  float: right;
+  overflow: hidden; }
+
+.img-wrap {
+  width: inherit;
+  height: inherit; }
 
 .img-wrap > h2 {
   position: absolute;
@@ -314,11 +331,11 @@ ul {
   display: none; }
 
 img.img-dispatcher {
-  width: 100%;
-  height: 100%; }
-
-span.data-display__link {
-  pointer-events: none; }
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); }
 
 li.selected {
   color: orange; }
@@ -326,4 +343,23 @@ li.selected {
 #searchResults, #lastSearched {
   display: none; }
   #searchResults.active, #lastSearched.active {
-    display: block; }
+    display: inline-block; }
+  #searchResults > li, #lastSearched > li {
+    position: relative;
+    height: 4rem;
+    margin-bottom: 2rem; }
+    #searchResults > li span.data-display__link, #lastSearched > li span.data-display__link {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 1.6rem; }
+
+#soundcloud-strip {
+  position: fixed;
+  height: 16.6rem;
+  width: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  bottom: 0; }
