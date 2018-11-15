@@ -14,7 +14,8 @@ define([
     'trackPlayerView',
     'trackPlayerModel',
     'toggleSearchedResultsView',
-    'toggleSearchResultsModel'
+    'toggleSearchResultsModel',
+    'nextButtonView'
 ], function ( _,
              Backbone,
              constants,
@@ -29,7 +30,8 @@ define([
              TrackPlayerView,
              trackPlayerModel,
              ToggleSearchedResultsView,
-             toggleSearchResultsModel
+             toggleSearchResultsModel,
+             NextButtonView
     ){
     console.log(constants);
     console.log(currentResultsModel);
@@ -51,6 +53,8 @@ define([
         trackDispatcherView.render();
         var trackPlayerView = new TrackPlayerView({el: "#soundcloud-strip", model: trackPlayerModel});
         trackPlayerView.render();
+        var nextButtonView = new NextButtonView({el: "#nextHrefStrip", model: currentResultsModel});
+        nextButtonView.render();
 
     };
 

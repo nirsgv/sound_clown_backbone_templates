@@ -23,6 +23,7 @@ require.config({
        TrackDispatcherView: 'views/trackDispatcherView',
        trackPlayerView: 'views/trackPlayerView',
        toggleSearchedResultsView: 'views/toggleSearchedResultsView',
+       nextButtonView: 'views/nextButtonView',
 
        searchInputModel: 'models/searchInputModel',
        trackDispatcherModel: 'models/trackDispatcherModel',

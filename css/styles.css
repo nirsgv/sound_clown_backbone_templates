@@ -377,3 +377,13 @@ li.selected {
   #toggleSearchResultsViews > li {
     display: inline-block;
     margin-right: 0.6rem; }
+
+#nextHrefStrip {
+  display: block;
+  padding: 1rem 0 0 0; }
+
+#next-href-button {
+  cursor: pointer; }
+  #next-href-button.inactive {
+    pointer-events: none;
+    opacity: 0.5; }

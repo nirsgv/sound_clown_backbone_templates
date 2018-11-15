@@ -39,6 +39,19 @@ define([
 
         });
     };
+    // used to get next results, and set stage ready for next use of function.
+    var getNextBatch = function (path) {
+        fetch(path, {
+            method: 'get',
+        })
+            .then(res => res.json())
+            .then(res => {
+                currentResultsModel.set({
+                    'currentResults': this.purifySearchResults(res.collection),
+                    'nextHref': res.next_href
+                });
+            })
+        };
 
     var purifySearchResults = function (arr){
         return Array.isArray(arr) &&
@@ -62,7 +75,7 @@ define([
     // what we are returning here we expose to the world as public
     return {
         initialize,
-        fetchCollectionByName,
+        getNextBatch,
         getTrackById,
         consoleLogSomething,
         purifySearchResults,

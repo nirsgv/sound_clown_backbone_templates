@@ -449,3 +449,20 @@ li.selected{
     margin-right: 0.6rem;
   }
 }
+
+#nextHrefStrip{
+  display: block;
+  //outline: 4px dashed yellow;
+  padding: 1rem 0 0 0;
+}
+
+#next-href-button{
+  cursor: pointer;
+  &.inactive{
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &.active{
+
+  }
+}
