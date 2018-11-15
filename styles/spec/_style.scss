@@ -477,5 +477,7 @@ li.selected{
 
 #searchResults:empty{
   height: 400px;
-  background: red;
+  &:after{
+    content: 'Search results here...'
+  }
 }

@@ -397,5 +397,6 @@ li.selected {
     left: 0; }
 
 #searchResults:empty {
-  height: 400px;
-  background: red; }
+  height: 400px; }
+  #searchResults:empty:after {
+    content: 'Search results here...'; }
