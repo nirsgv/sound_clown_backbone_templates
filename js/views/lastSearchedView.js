@@ -19,17 +19,17 @@ define([
         self: this,
         initialize: function(self){
             this.model.on("change",this.render, this);
-            toggleSearchResultsModel.on("change",this.tmpSomething, this);
+            toggleSearchResultsModel.on("change",this.justRender, this);
         },
 
-        tmpSomething: function(){
-            console.error(toggleSearchResultsModel);
+        justRender: function(){
             this.render();
         },
 
         searchLastSearchedTitleHandler: function(e){
             var retreivedTitleForSearch = e.currentTarget.dataset.searched;
             generalUtils.setCurrentResults(retreivedTitleForSearch);
+            toggleSearchResultsModel.set({'currentlyToggled':'results'});
         },
 
         render: function(){

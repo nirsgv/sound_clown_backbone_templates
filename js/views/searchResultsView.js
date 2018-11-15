@@ -19,15 +19,14 @@ define([
         events: {
             "click .data-display__result": "dispatchTrackIntoImageDispatcher"
         },
-
         self: this,
+
         initialize: function(){
             this.model.on("change",this.render, this);
-            toggleSearchResultsModel.on("change",this.tmpSomething, this);
+            toggleSearchResultsModel.on("change",this.justRender, this);
         },
 
-        tmpSomething: function(){
-            console.error(toggleSearchResultsModel);
+        justRender: function(){
             this.render();
         },
 
