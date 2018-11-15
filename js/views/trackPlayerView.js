@@ -29,20 +29,6 @@ define([
             this.render();
         },
 
-        getImageSrc: function(){
-            // item has image ? bring it : bring default image
-            return this.model.get('currentTrack').artwork_url
-                ? this.model.get('currentTrack').artwork_url
-                : 'assets/img/soundcloud-logo.jpg';
-        },
-
-        getItemValueByProperty: function(property){
-            // item has image ? bring it : bring default image
-            return this.model.get('currentTrack')[property]
-                ? this.model.get('currentTrack')[property]
-                : '';
-        },
-
         render: function(){
             var displayedPlayer = `
                 <iframe class="${this.attributes.className}" id="sc-player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"

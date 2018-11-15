@@ -20,7 +20,11 @@ define([
     var setCurrentResults = function(name){
         this.consoleLogSomething('something');
         this.getTracks(name).then((res)=>{
-            currentResultsModel.set({'currentResults': this.purifySearchResults(res)});
+            console.log(res.next_href);
+            currentResultsModel.set({
+                'currentResults': this.purifySearchResults(res.collection),
+                'nextHref': res.next_href
+            });
         });
     };
 
@@ -30,7 +34,9 @@ define([
         });
         return  SC.get('/tracks', {
             q: queryString,
-            limit: 20
+            limit: 20,
+            linked_partitioning: 1
+
         });
     };
 
