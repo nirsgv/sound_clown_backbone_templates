@@ -413,7 +413,7 @@ li.selected{
     display: inline-block;
   }
   &>li{
-    //outline: 4px dashed red;
+    font-size: 1.2rem;
     position: relative;
     height: 4rem;
     margin-bottom: 2rem;
@@ -465,4 +465,17 @@ li.selected{
   &.active{
 
   }
+}
+#lastSearched > li {
+  border-bottom: 1px solid #ccc;
+  height: 6rem;
+  margin-bottom: 0;
+  span.data-display__link{
+    left: 0;
+  }
+}
+
+#searchResults:empty{
+  height: 400px;
+  background: red;
 }

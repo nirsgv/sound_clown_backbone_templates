@@ -348,6 +348,7 @@ li.selected {
   #searchResults.active, #lastSearched.active {
     display: inline-block; }
   #searchResults > li, #lastSearched > li {
+    font-size: 1.2rem;
     position: relative;
     height: 4rem;
     margin-bottom: 2rem;
@@ -387,3 +388,14 @@ li.selected {
   #next-href-button.inactive {
     pointer-events: none;
     opacity: 0.5; }
+
+#lastSearched > li {
+  border-bottom: 1px solid #ccc;
+  height: 6rem;
+  margin-bottom: 0; }
+  #lastSearched > li span.data-display__link {
+    left: 0; }
+
+#searchResults:empty {
+  height: 400px;
+  background: red; }
