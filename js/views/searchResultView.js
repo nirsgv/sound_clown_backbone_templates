@@ -1,16 +1,17 @@
 
 define([
     'jquery',
-    'underscore',
-    'currentResultsModel',
-    'dot',
-], function( $, _, currentResultsModel ,dot){
+    'underscore'
+], function( $, _ ){
 
     var SearchResultView = Backbone.View.extend({
-        el: "#searchResults",
-        model: currentResultsModel,
+        //el: "#searchResults",
+        //model: currentResultsModel,
+        tagName: 'li',
         initialize: function(self){
-            this.model.on("change",this.modelChanged, this);
+            //this.model.on("change",this.modelChanged, this);
+            console.log(this.model);
+            console.log(this.model.id);
             this.render();
         },
 
@@ -18,14 +19,12 @@ define([
             console.log('modelChanged');
         },
 
-        printResults: function(currentResultsModel){
-            console.log(this.el);
-            console.log(this.$el);
-
-        },
-
         render: function(){
-            return  "<li class='click-me-tmp'> rendered li </li>"
+                var tempFn = _.template($('#data-display__result').html());
+                var resultHtml = tempFn(this.model);
+                console.log(this.model);
+                console.log(resultHtml);
+            return  resultHtml
         }
 
 });

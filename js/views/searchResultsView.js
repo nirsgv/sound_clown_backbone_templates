@@ -5,8 +5,9 @@ define([
     'currentResultsModel',
     'lastSearchedModel',
     'trackDispatcherModel',
-    'toggleSearchResultsModel'
-], function( $, _, currentResultsModel, lastSearchedModel, trackDispatcherModel, toggleSearchResultsModel){
+    'toggleSearchResultsModel',
+    'searchResultView',
+], function( $, _, currentResultsModel, lastSearchedModel, trackDispatcherModel, toggleSearchResultsModel, SearchResultView){
 
     var SearchResultsView = Backbone.View.extend({
         el: "#searchResults",
@@ -108,14 +109,10 @@ define([
             event.target.remove();
         },
         render: function(){
-            var results = this.model.get('currentResults').map(t => `
-                    <li class="data-display__result" track-id="${t.id}">
-                         <div class="waveform-bkg" style="background-image: url(${t.waveform_url})">
-                            <span class="data-display__link">${t.title}</span>
-                        </div>
-                    </div>`).join('');
+            //alert('render');
+            var results = this.model.get('currentResults').map(t => new SearchResultView({model:t}).render()).join('');
+            console.log(results);
             var container = `<ul id="searchResults" class="${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : 'inactive'}">${results}</ul>`;
-            container.innerHTML = results;
             this.$el.html(container);
 
             return this;
@@ -123,6 +120,5 @@ define([
     });
 
     return SearchResultsView;
-
 });
 

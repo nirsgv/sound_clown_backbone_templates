@@ -19,7 +19,9 @@ require.config({
 
        searchInput: 'views/searchInputView',
        searchResultsView: 'views/searchResultsView',
+       searchResultView: 'views/searchResultView',
        LastSearchedView: 'views/LastSearchedView',
+       LastSearchedItemView: 'views/LastSearchedItemView',
        TrackDispatcherView: 'views/trackDispatcherView',
        trackPlayerView: 'views/trackPlayerView',
        toggleSearchedResultsView: 'views/toggleSearchedResultsView',
