@@ -7,7 +7,7 @@ define([
     var LastSearchedModel = Backbone.Model.extend({
         defaults: {
             //LAST_SEARCHED: 'sound_clown.lastSearched',
-            lastSearchedStrings: []
+            lastSearchedStrings: ''
         },
         initialize: function() {
             this.on('change', this.setLocalStorageByModel, this);
@@ -22,7 +22,7 @@ define([
                     console.log('this model lastSearched: ' + this.get('lastSearchedStrings'));
                 } else {
                     // if there is no localStorage information, set it in this model as an empty array
-                    this.set('lastSearchedStrings', []);
+                    this.set('lastSearchedStrings', '');
                     console.log('this model lastSearched: ' + this.get('lastSearchedStrings'));
                 }
             },
