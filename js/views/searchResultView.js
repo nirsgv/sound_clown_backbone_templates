@@ -1,29 +1,40 @@
 
 define([
     'jquery',
-    'underscore'
+    'underscore',
 ], function( $, _ ){
 
     var SearchResultView = Backbone.View.extend({
-        //el: "#searchResults",
-        //model: currentResultsModel,
         tagName: 'li',
+        // template: $.get( "js/templates/search-display__result.html", function( data ) {
+        //     console.log( data );
+        //     //alert( "Load was performed." );
+        // }).done(function(datas) {
+        //     console.log( datas );
+        //     return datas.responseText;
+        // }),
+
         initialize: function(self){
-            //this.model.on("change",this.modelChanged, this);
-            console.log(this.model);
-            console.log(this.model.id);
+            console.log(this.template);
             this.render();
         },
 
-        modelChanged: function(){
-            console.log('modelChanged');
-        },
-
         render: function(){
-                var tempFn = _.template($('#data-display__result').html());
+
+            //var tempFn = _.template($('#data-display__result').load("../templates/search-display__result.html"));
+
+            // $.get( "js/templates/search-display__result.html", function( data ) {
+            //     console.log( data );
+            //     //alert( "Load was performed." );
+            // }).done(function(data) {
+            //     ttt = data.responseText;
+            // });
+            // console.log( ttt );
+
+            var tempFn = _.template($('#data-display__result').html());
                 var resultHtml = tempFn(this.model);
-                console.log(this.model);
-                console.log(resultHtml);
+                //console.log(this.model);
+                //console.log(resultHtml);
             return  resultHtml
         }
 

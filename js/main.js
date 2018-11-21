@@ -34,6 +34,7 @@ require.config({
        currentResultsModel: 'models/currentResultsModel',
        CurrentResultsCollection: 'collections/CurrentResultsCollection',
        toggleSearchResultsModel: 'models/toggleSearchResultsModel',
+
    }
 });
 

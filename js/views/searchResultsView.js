@@ -109,7 +109,6 @@ define([
             event.target.remove();
         },
         render: function(){
-            //alert('render');
             var results = this.model.get('currentResults').map(t => new SearchResultView({model:t}).render()).join('');
             console.log(results);
             var container = `<ul id="searchResults" class="${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : 'inactive'}">${results}</ul>`;

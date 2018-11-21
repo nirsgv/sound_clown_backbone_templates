@@ -29,6 +29,7 @@ define([
         },
 
         setLastSearchedModel: function(name){
+
             var modifiedArr = lastSearchedModel.get('lastSearchedStrings').split(',');
             // check for duplicates failed, add to list, cut list for five items length in total
             if (modifiedArr.indexOf(name) === -1) {
