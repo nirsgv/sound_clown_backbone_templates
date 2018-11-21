@@ -15,7 +15,8 @@ define([
     'trackPlayerModel',
     'toggleSearchedResultsView',
     'toggleSearchResultsModel',
-    'nextButtonView'
+    'nextButtonView',
+    'templatesModel'
 ], function ( _,
              Backbone,
              constants,
@@ -31,11 +32,13 @@ define([
              trackPlayerModel,
              ToggleSearchedResultsView,
              toggleSearchResultsModel,
-             NextButtonView
+             NextButtonView,
+             templatesModel
     ){
     console.log(constants);
     console.log(currentResultsModel);
     console.log(generalUtils);
+    console.log(templatesModel);
 
     // because this is the app module, it is nice to have an initialize method on it
     // which is responsible for starting the application

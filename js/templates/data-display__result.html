@@ -1,3 +1,5 @@
-<li class="searched-display__result" data-searched="<%=s%>">
-    <span class="data-display__link"><%=s%></span>
+<li class="data-display__result" track-id="{{=it.id}}">
+    <div class="waveform-bkg" style="background-image: url({{=it.waveform_url}})">
+        <span class="data-display__link">{{=it.title}}</span>
+    </div>
 </li>

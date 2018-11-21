@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>templates backbone</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/styles.min.css"/>
 </head>
 <body>
 
@@ -25,21 +25,6 @@
 <div id="soundcloud-strip">
 
 </div>
-
-
-<script id="data-display__result" type="text/html">
-    <li class="data-display__result" track-id="<%= id %>">
-        <div class="waveform-bkg" style="background-image: url(<%=waveform_url%>)">
-            <span class="data-display__link"><%=title%></span>
-        </div>
-    </li>
-</script>
-
-<script id="search-display__result" type="text/html">
-    <li class="searched-display__result" data-searched="<%=s%>">
-        <span class="data-display__link"><%=s%></span>
-    </li>
-</script>
 
 <script src="js/lib/require.js" data-main="js/main"></script>
 </body>

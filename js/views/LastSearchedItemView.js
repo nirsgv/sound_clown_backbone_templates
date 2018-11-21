@@ -2,11 +2,12 @@
 define([
     'jquery',
     'underscore',
-], function( $, _ ){
+    'templatesModel',
+    'doT'
+], function( $, _, templatesModel, doT ){
 
     var LastSearchedItemView = Backbone.View.extend({
-        //el: "#lastSearched",
-        //model: lastSearchedModel,
+        template: null,
         attributes: {
             className: 'sdf',
             id: 'abc'
@@ -16,12 +17,16 @@ define([
         },
         self: this,
         initialize: function(self){
-            //this.model.on("change",this.render, this);
+            console.log(this.template);
+            console.log(templatesModel);
+            this.template = templatesModel.lastSearchedItemTemplate;
+            console.log(this.template);
         },
 
         render: function(){
             var tempObj = {s:this.model};
-            var tempFn = _.template($('#search-display__result').html());
+            // var tempFn = _.template($('#search-display__result').html());
+            var tempFn = doT.template(this.template);
             var resultHtml = tempFn(tempObj);
 
             return resultHtml;

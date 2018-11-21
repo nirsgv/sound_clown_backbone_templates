@@ -4,12 +4,30 @@
 define([
     'underscore',
     'backbone'
-], function (_, Backbone) {
+], function ( _, Backbone ) {
 
-    var ToggleSearchResultsModel = Backbone.Model.extend();
+    var TemplatesModel = Backbone.Model.extend({
 
-    var toggleSearchResultsModel = new ToggleSearchResultsModel({currentlyToggled: 'results'});
+        retreiveAndSet: function(path,destination){
+            $.get( path, function( data ) {
+                console.log( data );
+                this[destination] = data;
+                console.log(this);
+            }.bind(this));
+        },
 
-    return toggleSearchResultsModel;
+        initialize: function(){
+            console.log('templatesModel initialized');
+            this.retreiveAndSet("js/templates/data-display__result.html",'currentResultItemTemplate');
+            this.retreiveAndSet("js/templates/search-display__result.html",'lastSearchedItemTemplate');
+        },
+    });
+
+    var templatesModel = new TemplatesModel({
+        currentResultItemTemplate: null,
+        lastSearchedItemTemplate: null,
+    });
+
+    return templatesModel;
 });
 

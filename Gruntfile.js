@@ -20,15 +20,15 @@ grunt.initConfig({
             //ignores: ['./src/js/main.js'], // ignores array is provided to include whole files to ignore
             reporterOutput: './js_hint_reports/jshint.txt',
         },
-        files: ['./src/js/*.js']
+        files: ['./js/*.js']
     },
     uglify: {
         development: {
           files: [{
               expand: true,
-              cwd: './src/js/', // cwd: current working directory
-              src: '**/*.js', // src: what to scan
-              dest: './dest/js/min', // dest: destination folder
+              cwd: 'js/', // cwd: current working directory
+              src: '**/main.js', // src: what to scan
+              dest: 'js/', // dest: destination folder
           }],
         },
         options: {
@@ -47,12 +47,12 @@ grunt.initConfig({
                 'tag-pair': true,
                 'tag-self-close': true,
                 'tagname-lowercase': true,
-                'id-class-value': true,
-                'id-class-unique': true,
+                'id-class-value': false,
+                'id-class-unique': false,
                 'src-not-empty': true,
                 'img-alt-required': true,
             },
-            src: ['./src/*.html']
+            src: ['./*.html']
         },
     },
     htmlmin: {
@@ -65,12 +65,12 @@ grunt.initConfig({
                 removeOptionalTags: true,
                 collapseWhitespace: true,
             },
-            //files: {'./src/index.min.html': ['./src/*.html']}
+            //files: {'./src/ind    ex.min.html': ['./src/*.html']}
             files: [{
                 expand: true,
-                cwd: './src/',
-                dest: './dest/',
-                src: ['./*.html'], // providing a pattern, indicating the files we care about
+                cwd: './',
+                dest: './',
+                src: ['./*.html','!*.min.html'], // providing a pattern, indicating the files we care about
                 ext: '.min.html', // providing an output extension for our newly created files
                 extDot: 'last', // used to indicate where the period indicating the extension is located (first or last)
             }]
@@ -83,7 +83,7 @@ grunt.initConfig({
                 trace: true, //
             },
             files: {                         // Dictionary ozzf files
-                'src/css/main.css': 'src/scss/style.scss'      // 'destination': 'source'
+                'css/styles.css': 'styles/styles.scss'      // 'destination': 'source'
             }
         }
     },
@@ -92,7 +92,7 @@ grunt.initConfig({
           options: {
 
           },
-          src: ['src/css/main.css']
+          src: ['css/styles.css']
       },
       laxed: {
         options: {
@@ -111,7 +111,7 @@ grunt.initConfig({
             'report': 'gzip'
           },
           files: {
-              'dest/css/min/main.min.css': ['src/css/main.css']
+              'css/styles.min.css': ['css/styles.css']
           }
       },
       //   minify: { // configuration for multi files
@@ -160,6 +160,3 @@ grunt.registerTask('default', [
         'clean', 'jshint', 'uglify', 'htmlhint', 'htmlmin', 'sass', 'csslint', 'cssmin', 'watch'
     ]
 );
-
-
-// extand

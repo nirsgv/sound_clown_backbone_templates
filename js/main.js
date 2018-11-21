@@ -9,7 +9,7 @@ require.config({
        jquery: LIB_PATH+ 'jquery-min',
        underscore: LIB_PATH+ 'underscore-min',
        backbone: LIB_PATH+ 'backbone-min',
-       dot: LIB_PATH+ 'doT',
+       doT: LIB_PATH+ 'doT',
 
        soundcloud_sdk: 'https://connect.soundcloud.com/sdk/sdk-3.3.0',
        soundcloud_api: 'https://w.soundcloud.com/player/api',
@@ -34,6 +34,7 @@ require.config({
        currentResultsModel: 'models/currentResultsModel',
        CurrentResultsCollection: 'collections/CurrentResultsCollection',
        toggleSearchResultsModel: 'models/toggleSearchResultsModel',
+       templatesModel: 'models/templatesModel',
 
    }
 });

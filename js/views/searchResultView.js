@@ -2,45 +2,29 @@
 define([
     'jquery',
     'underscore',
-], function( $, _ ){
+    'templatesModel',
+    'doT'
+], function( $, _, templatesModel, doT ){
 
     var SearchResultView = Backbone.View.extend({
         tagName: 'li',
-        // template: $.get( "js/templates/search-display__result.html", function( data ) {
-        //     console.log( data );
-        //     //alert( "Load was performed." );
-        // }).done(function(datas) {
-        //     console.log( datas );
-        //     return datas.responseText;
-        // }),
+        template: null,
 
-        initialize: function(self){
+        initialize: function(){
             console.log(this.template);
-            this.render();
+            console.log(templatesModel);
+            this.template = templatesModel.currentResultItemTemplate;
+            console.log(this.template);
         },
 
         render: function(){
-
-            //var tempFn = _.template($('#data-display__result').load("../templates/search-display__result.html"));
-
-            // $.get( "js/templates/search-display__result.html", function( data ) {
-            //     console.log( data );
-            //     //alert( "Load was performed." );
-            // }).done(function(data) {
-            //     ttt = data.responseText;
-            // });
-            // console.log( ttt );
-
-            var tempFn = _.template($('#data-display__result').html());
+            console.log(this.template);
+            console.log($('#data-display__result').html());
+            var tempFn = doT.template(this.template);
                 var resultHtml = tempFn(this.model);
-                //console.log(this.model);
-                //console.log(resultHtml);
             return  resultHtml
         }
-
 });
-
-
 
     return SearchResultView;
 
