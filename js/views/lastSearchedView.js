@@ -5,11 +5,14 @@ define([
     'generalUtils',
     'toggleSearchResultsModel',
     'LastSearchedItemView',
-], function( $, _, generalUtils, toggleSearchResultsModel , LastSearchedItemView ){
+    'templatesModel',
+    'doT'
+], function( $, _, generalUtils, toggleSearchResultsModel , LastSearchedItemView, templatesModel, doT ){
 
     var LastSearchedView = Backbone.View.extend({
         el: "#lastSearched",
         //model: lastSearchedModel,
+        template: null,
         attributes: {
             className: 'sdf',
             id: 'abc'
@@ -21,6 +24,7 @@ define([
         initialize: function(self){
             this.model.on("change",this.render, this);
             toggleSearchResultsModel.on("change",this.justRender, this);
+            this.template = templatesModel.lastSearchedItemsIteratedTemplate;
         },
 
         justRender: function(){
@@ -35,12 +39,16 @@ define([
 
         render: function(){
             var lastSearchedArr = this.model.get('lastSearchedStrings').split(',').reverse();
-            var displayedLastResults = lastSearchedArr.map(s => new LastSearchedItemView({model:s}).render()).join('');
-
-            var container = `<ul id="lastSearched" class="${toggleSearchResultsModel.get('currentlyToggled')==='searched' ? 'active' : 'inactive'}">${displayedLastResults}</ul>`;
-            container.innerHTML = displayedLastResults;
+            var templateData = {
+                lastSearchedArr
+            };
+            //var displayedLastResults = lastSearchedArr.map(s => new LastSearchedItemView({model:s}).render()).join('');
+            var tempFn = doT.template(this.template);
+            var resultHtml = tempFn(templateData);
+            var container = `<ul id="lastSearched" class="${toggleSearchResultsModel.get('currentlyToggled')==='searched' ? 'active' : 'inactive'}">
+                                ${resultHtml}
+                             </ul>`;
             this.$el.html(container);
-
             return this;
         }
     });

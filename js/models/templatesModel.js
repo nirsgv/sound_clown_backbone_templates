@@ -19,13 +19,17 @@ define([
         initialize: function(){
             console.log('templatesModel initialized');
             this.retreiveAndSet("js/templates/data-display__result.html",'currentResultItemTemplate');
+            this.retreiveAndSet("js/templates/data-display__results_iterated.html",'currentResultItemsIteratedTemplate');
             this.retreiveAndSet("js/templates/search-display__result.html",'lastSearchedItemTemplate');
+            this.retreiveAndSet("js/templates/search-display__results_iterated.html",'lastSearchedItemsIteratedTemplate');
         },
     });
 
     var templatesModel = new TemplatesModel({
         currentResultItemTemplate: null,
         lastSearchedItemTemplate: null,
+        currentResultItemsIteratedTemplate: null,
+        lastSearchedItemsIteratedTemplate: null,
     });
 
     return templatesModel;

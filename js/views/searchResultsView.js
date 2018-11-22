@@ -7,11 +7,14 @@ define([
     'trackDispatcherModel',
     'toggleSearchResultsModel',
     'searchResultView',
-], function( $, _, currentResultsModel, lastSearchedModel, trackDispatcherModel, toggleSearchResultsModel, SearchResultView){
+    'templatesModel',
+    'doT'
+], function( $, _, currentResultsModel, lastSearchedModel, trackDispatcherModel, toggleSearchResultsModel, SearchResultView, templatesModel, doT ){
 
     var SearchResultsView = Backbone.View.extend({
         el: "#searchResults",
         model: currentResultsModel,
+        template: null,
         attributes: {
             className: 'dngnddn',
             id: 'dsfhfhb'
@@ -25,6 +28,7 @@ define([
         initialize: function(){
             this.model.on("change",this.render, this);
             toggleSearchResultsModel.on("change",this.justRender, this);
+            this.template = templatesModel.currentResultItemsIteratedTemplate;
         },
 
         justRender: function(){
@@ -109,9 +113,15 @@ define([
             event.target.remove();
         },
         render: function(){
-            var results = this.model.get('currentResults').map(t => new SearchResultView({model:t}).render()).join('');
-            console.log(results);
-            var container = `<ul id="searchResults" class="${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : 'inactive'}">${results}</ul>`;
+            //var results = this.model.get('currentResults').map(t => new SearchResultView({model:t}).render()).join('');
+            //console.log(results);
+            var templateData = {
+                results: this.model.get('currentResults')
+            };
+            var tempFn = doT.template(this.template);
+            var resultHtml = tempFn(templateData);
+
+            var container = `<ul id="searchResults" class="${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : 'inactive'}">${resultHtml}</ul>`;
             this.$el.html(container);
 
             return this;
