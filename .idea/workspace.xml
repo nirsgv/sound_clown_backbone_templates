@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd4c41ee-3498-4884-9eed-71d252b3a371" name="Default Changelist" comment="- added a template view and a template to render last-searched-item">
+    <list default="true" id="bd4c41ee-3498-4884-9eed-71d252b3a371" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/templates/data-display__results_iterated.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/templates/data-display__results_iterated.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/utils/general_utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/utils/general_utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/lastSearchedView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/lastSearchedView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/nextButtonView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/nextButtonView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/searchResultsView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/searchResultsView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/toggleSearchedResultsView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/toggleSearchedResultsView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/views/trackPlayerView.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/views/trackPlayerView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/spec/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/spec/_mixins.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/spec/_style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/spec/_style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/spec/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/spec/_variables.scss" afterDir="false" />
     </list>
@@ -91,18 +85,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="431" />
+          <entry key="html" value="434" />
           <entry key="js" value="1753" />
-          <entry key="scss" value="282" />
-          <entry key="txt" value="781" />
+          <entry key="scss" value="690" />
+          <entry key="txt" value="791" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="465" />
+          <entry key="HTML" value="468" />
           <entry key="JavaScript" value="1719" />
-          <entry key="PLAIN_TEXT" value="781" />
-          <entry key="SCSS" value="282" />
+          <entry key="PLAIN_TEXT" value="791" />
+          <entry key="SCSS" value="690" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -111,7 +105,7 @@
           <entry key="html" value="15" />
           <entry key="js" value="51" />
           <entry key="json" value="1" />
-          <entry key="scss" value="5" />
+          <entry key="scss" value="8" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -122,7 +116,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="51" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="SCSS" value="5" />
+          <entry key="SCSS" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -133,13 +127,13 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7211055">
+    <splitter split-orientation="horizontal" split-proportion="0.4830402">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/views/lastSearchedView.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1081">
+                <state relative-caret-position="480">
                   <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
                 </state>
               </provider>
@@ -166,8 +160,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+                <state relative-caret-position="222">
+                  <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -184,17 +178,26 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/styles/spec/_style.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="65">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                <state relative-caret-position="120">
+                  <caret line="163" column="1" lean-forward="true" selection-start-line="163" selection-start-column="1" selection-end-line="163" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/styles/spec/_variables.scss">
+            <entry file="file://$PROJECT_DIR$/styles/spec/_mixins.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="433">
-                  <caret line="23" selection-start-line="23" selection-end-line="23" />
+                <state relative-caret-position="322">
+                  <caret line="14" column="26" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/styles/styles.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="23">
+                  <caret line="1" selection-end-line="1" />
                 </state>
               </provider>
             </entry>
@@ -213,10 +216,10 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/styles/spec/_style.scss">
+            <entry file="file://$PROJECT_DIR$/styles/spec/_variables.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="177" column="14" selection-start-line="177" selection-start-column="14" selection-end-line="177" selection-end-column="14" />
+                <state relative-caret-position="199">
+                  <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -236,18 +239,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search-with-toggle-strip</find>
-      <find>nextHrefStrip</find>
-      <find>toggleSearchResultsModel</find>
-      <find>searchResults</find>
-      <find>set</find>
-      <find>render</find>
-      <find>lss</find>
-      <find>!</find>
-      <find>cssmin</find>
-      <find>dot</find>
-      <find>displayedLastResults</find>
-      <find>red</find>
       <find>contain</find>
       <find>items-holder</find>
       <find>soundcloud-strip</find>
@@ -266,6 +257,18 @@
       <find>data-display</find>
       <find>hover</find>
       <find>ul</find>
+      <find>last-searc</find>
+      <find>track-player</find>
+      <find>deep-get</find>
+      <find>40rem</find>
+      <find>toggle-results</find>
+      <find>search-with-toggle-strip</find>
+      <find>$sc-iframe-height</find>
+      <find>mobile</find>
+      <find>main</find>
+      <find>calc</find>
+      <find>red</find>
+      <find>sear</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -318,9 +321,10 @@
         <option value="$PROJECT_DIR$/js/views/searchResultsView.js" />
         <option value="$PROJECT_DIR$/js/views/nextButtonView.js" />
         <option value="$PROJECT_DIR$/js/templates/data-display__results_iterated.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/views/toggleSearchedResultsView.js" />
         <option value="$PROJECT_DIR$/js/views/trackPlayerView.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/styles/spec/_mixins.scss" />
         <option value="$PROJECT_DIR$/styles/spec/_variables.scss" />
         <option value="$PROJECT_DIR$/styles/spec/_style.scss" />
       </list>
@@ -341,8 +345,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -452,7 +457,7 @@
       <workItem from="1542714377260" duration="37610000" />
       <workItem from="1542889595695" duration="16052000" />
       <workItem from="1543252237493" duration="1569000" />
-      <workItem from="1543417081452" duration="5797000" />
+      <workItem from="1543417081452" duration="12237000" />
     </task>
     <task id="LOCAL-00001" summary="require.js implemented">
       <created>1541510332027</created>
@@ -706,11 +711,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542897700128</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="- mostly css">
+      <created>1543929655355</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1543929655355</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198487000" />
+    <option name="totallyTimeSpent" value="204927000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -752,7 +764,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- searchLastSearchedTitle function" />
     <MESSAGE value="- setCurrentResults moved to generalUtils from 'lastSearchedView' + 'searchInputView'" />
     <MESSAGE value="- image dispatcher model and view" />
     <MESSAGE value="- track player view + model added" />
@@ -777,7 +788,8 @@
     <MESSAGE value="- duplicated templates to have doT version instead of current&#10;- kept a version of underscore files&#10;- migrated the template engine to doT" />
     <MESSAGE value="- if there is no localStorage split function is a bug because it is &#10;  called on an empty array and not a string - solved&#10;- track.js deleted as it is not used" />
     <MESSAGE value="- moved the templates execution to self-iterating-templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="- moved the templates execution to self-iterating-templates" />
+    <MESSAGE value="- mostly css" />
+    <option name="LAST_COMMIT_MESSAGE" value="- mostly css" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/lib/require.js">
@@ -981,7 +993,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/views/lastSearchedView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
+        <state relative-caret-position="480">
           <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
         </state>
       </provider>
@@ -990,13 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1039,13 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/utils/general_utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1053,17 +1051,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/spec/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/styles/spec/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="199">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/spec/_style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="120">
+          <caret line="163" column="1" lean-forward="true" selection-start-line="163" selection-start-column="1" selection-end-line="163" selection-end-column="1" />
         </state>
       </provider>
     </entry>

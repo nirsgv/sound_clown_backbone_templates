@@ -6,16 +6,34 @@ $min-breakpoints: (
   desktop: map-get($devices, desktop) + 0.1,
   mobile: map-get($devices, mobile) + 0.1
 );
-$moblie-min-bp: 375px + 1;
+
+$soundcloud-strip-height: (
+    desktop: 16.6rem,
+    mobile: 16.6rem
+);
+
+$search-and-toggle-height: (
+    desktop: 2rem,
+    mobile: 3rem
+);
+
+$next-results-height: (
+    desktop: 2rem,
+    mobile: 2rem
+);
+
+$track-dispatcher-height: (
+    desktop: 40rem,
+    mobile: 6rem
+);
+
+$mobile-min-bp: 375px + 1;
 
 $body-bgc: #eee;
 $main-font-family: 'Open Sans', sans-serif;
 $main-width: 80rem;
 $search-section-width: 30rem;
 $player-section-width: calc(#{$main-width} - #{$search-section-width});
-$soundcloud-strip-height: 16.6rem;
-$search-section-bkg-color: #e0e0e0;
-$search-control-bkg-color: #f4f4f4;
 $paginate-strip-bkg-color: #ccc;
 
 $sc-iframe-height: 16.6rem;

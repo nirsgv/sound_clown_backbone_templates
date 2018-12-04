@@ -12,7 +12,9 @@
 }
 
 @mixin respond-to($media) {
-  @if $media == mobile {
-    @media only screen and (min-width: map_get($min-breakpoints, $mobile)) { @content; }
+  @if $media == min-mobile {
+    @media only screen and (min-width: map-get($min-breakpoints, mobile)) {
+      @content;
+    }
   }
 }
