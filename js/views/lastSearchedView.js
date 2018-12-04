@@ -45,7 +45,7 @@ define([
             //var displayedLastResults = lastSearchedArr.map(s => new LastSearchedItemView({model:s}).render()).join('');
             var tempFn = doT.template(this.template);
             var resultHtml = tempFn(templateData);
-            var container = `<ul id="lastSearched" class="${toggleSearchResultsModel.get('currentlyToggled')==='searched' ? 'active' : 'inactive'}">
+            var container = `<ul class="last-searched__items ${toggleSearchResultsModel.get('currentlyToggled') ==='searched' ? 'active' : 'inactive'}" id="lastSearched">
                                 ${resultHtml}
                              </ul>`;
             this.$el.html(container);

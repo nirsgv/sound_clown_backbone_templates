@@ -121,7 +121,7 @@ define([
             var tempFn = doT.template(this.template);
             var resultHtml = tempFn(templateData);
 
-            var container = `<ul id="searchResults" class="${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : 'inactive'}">${resultHtml}</ul>`;
+            var container = `<ul class="search-results__items ${toggleSearchResultsModel.get('currentlyToggled')==='results' ? 'active' : 'inactive'}" id="searchResults">${resultHtml}</ul>`;
             this.$el.html(container);
 
             return this;

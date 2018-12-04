@@ -5,6 +5,9 @@ define([
     'generalUtils',
     'currentResultsModel',
 ], function( $, _, generalUtils, currentResultsModel ){
+    //var SrcOnlyView = Backbone.View.extend({src:'asdasdasd'});
+    //var srcOnlyView = new SrcOnlyView({el: "#nextHrefStrip", model: currentResultsModel});
+
 
     var TrackPlayerView = Backbone.View.extend({
         el: "#soundcloud-strip",
@@ -23,10 +26,13 @@ define([
 
         modelChanged: function(){
             console.log(this);
-            console.log(this.model.get('currentTrack'));
-            console.log(this.attributes);
-            console.log(generalUtils);
-            this.render();
+            // console.log(this.model.get('currentTrack'));
+            // console.log(this.attributes);
+            // console.log(generalUtils);
+            var builtSrc = `https://w.soundcloud.com/player/?url=${this.model.get('permalink_url')}`;
+            $('iframe').attr('src',builtSrc);
+
+            //this.render();
         },
 
         render: function(){

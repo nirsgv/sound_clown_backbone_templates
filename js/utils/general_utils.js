@@ -54,6 +54,7 @@ define([
         };
 
     var purifySearchResults = function (arr){
+        console.log(arr);
         return Array.isArray(arr) &&
             arr.map((item) => {
                 return {

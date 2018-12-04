@@ -1,7 +1,9 @@
 {{~it.results :value:index}}
 <li class="data-display__result" track-id="{{=value.id}}">
+    {{ {console.log(value)} }}
     <div class="waveform-bkg" style="background-image: url({{=value.waveform_url}})">
         <span class="data-display__link">{{=value.title}}</span>
+        <div class="track-image" style="background-image: url({{=value.artwork_url ? value.artwork_url : '../../assets/img/soundcloud-logo.jpg'}})"></div>
     </div>
 </li>
 {{~}}

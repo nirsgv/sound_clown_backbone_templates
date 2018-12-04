@@ -6,25 +6,23 @@
     <title>templates backbone</title>
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="css/styles.min.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 
-<main id="main">
+<main id="main" class="main">
     <section id="search-with-toggle-strip">
-        <ul id="toggleSearchResultsViews"></ul>
+        <ul class="toggle-results" id="toggleSearchResultsViews"></ul>
     </section>
-    <aside id="items-holder">
-        <section id="searchResultsContainer"></section>
-        <section id="lastSearchedContainer"></section>
+    <aside id="search_lists" class="search-lists container">
+        <section id="searchResultsContainer" class="search-results container"></section>
+        <section id="lastSearchedContainer" class="last-searched container"></section>
     </aside>
     <section id="track-dispatcher"></section>
     <section id="track-player"></section>
-    <section id="nextHrefStrip"></section>
+    <section id="nextHrefStrip" class="next-results container"></section>
 </main>
-<div id="soundcloud-strip">
-
-</div>
+<aside id="soundcloud-strip" class="soundcloud container"></aside>
 
 <script src="js/lib/require.js" data-main="js/main"></script>
 </body>

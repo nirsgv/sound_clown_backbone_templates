@@ -38,7 +38,7 @@ define([
         },
 
         isButtonActive: function(){
-            return this.model.get('nextHref') ? 'active' : 'inactive';
+            return this.model.get('nextHref') ? 'next-results__button--active' : 'next-results__button--inactive';
         },
 
         render: function(){
@@ -46,7 +46,7 @@ define([
                 <button 
                 id="${this.attributes.id}" 
                 data-nextHref="${this.model.get('nextHref')}" 
-                class="next-results-button ${this.isButtonActive()}">
+                class="next-results__button ${this.isButtonActive()}">
                     Next results
                 </button>
                                         `;

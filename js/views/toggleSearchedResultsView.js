@@ -11,7 +11,7 @@ define([
             className: 'toggle-search-results-views',
         },
         events: {
-            "click .toggle-item": "toggleSearchLists"
+            "click .toggle-results__item": "toggleSearchLists"
         },
         self: this,
 
@@ -35,8 +35,8 @@ define([
 
         render: function(){
             var toggleSearchedResults = `
-                                       <li class="toggle-item ${this.model.get('currentlyToggled')==='results' ? 'selected' : true}" id="search-results-toggle-item">Search results</li>
-                                       <li class="toggle-item ${this.model.get('currentlyToggled')==='searched' ? 'selected' : true}" id="last-searches-toggle-item">Last searches</li>
+                                       <li class="toggle-results__item ${this.model.get('currentlyToggled')==='results' ? 'selected' : true}" id="search-results-toggle-item">Search results</li>
+                                       <li class="toggle-results__item ${this.model.get('currentlyToggled')==='searched' ? 'selected' : true}" id="last-searches-toggle-item">Last searches</li>
                                         `;
 
             this.$el.html(
