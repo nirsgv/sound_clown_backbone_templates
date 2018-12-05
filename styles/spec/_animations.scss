@@ -9,11 +9,20 @@
   to {filter: blur(0px);}
 }
 
-@keyframes moveGradients {
+@keyframes moveSideways {
   0% {
     transform: translateX(-20%);
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes toggleOpacity {
+  0% {
+    opacity: .45;
+  }
+  100% {
+    opacity: 1;
   }
 }

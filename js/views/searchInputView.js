@@ -15,8 +15,8 @@ define([
             id: 'click'
         },
         events: {
-            "click .click": "onSearchSubmitHandler",
-            "input .textInput": "onInputChangeHandler"
+            "click .search__button": "onSearchSubmitHandler",
+            "input .search__input": "onInputChangeHandler"
         },
 
         initialize: function(){
@@ -34,7 +34,7 @@ define([
             // check for duplicates failed, add to list, cut list for five items length in total
             if (modifiedArr.indexOf(name) === -1) {
                 modifiedArr.push(name);
-                modifiedArr = modifiedArr.slice(-1 * 5);
+                modifiedArr = modifiedArr.slice(-1 * 6);
                 // check for duplicates passed, move item to last position
             } else {
                 const hasElementPosition = modifiedArr.indexOf(name);
@@ -50,9 +50,19 @@ define([
         },
 
         render: function(){
-            var content = `<section id="input-container">
-                             <input class='textInput' placeholder='Write something...'/>
-                             <button class='click'>click</button>
+            var content = `<section id="input-container" class="search container">
+                             <input class='search__input' placeholder='Write something...'/>
+                <a 
+                id="${this.attributes.id}" 
+                class="search__button"
+                >
+                   <span class="search__text"></span> 
+                    <i class="search__icon icon search">
+                         <svg class="icon" aria-hidden="true" focusable="false">
+                            <use xlink:href="../../assets/img/icons.svg#search"></use>
+                         </svg>    
+                    </i>
+                </a>                             
                            </section>`;
             this.$el.prepend(content);
             return this;

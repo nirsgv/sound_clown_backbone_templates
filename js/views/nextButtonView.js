@@ -43,12 +43,18 @@ define([
 
         render: function(){
             var nextHrefButton = `
-                <button 
+                <a 
                 id="${this.attributes.id}" 
                 data-nextHref="${this.model.get('nextHref')}" 
                 class="next-results__button ${this.isButtonActive()}">
-                    Next results
-                </button>
+                   <span class="next-results__text">Next results</span> 
+                    <i class="next-results__icon icon next">
+                         <svg class="icon" aria-hidden="true" focusable="false">
+                            <use xlink:href="../../assets/img/icons.svg#next"></use>
+                         </svg>    
+                    </i>
+                </a>
+
                                         `;
 
             this.$el.html(
