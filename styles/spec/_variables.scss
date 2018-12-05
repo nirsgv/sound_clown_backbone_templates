@@ -14,18 +14,24 @@ $soundcloud-strip-height: (
 
 $search-and-toggle-height: (
     desktop: 2rem,
-    mobile: 3rem
+    mobile: 4rem
 );
 
 $next-results-height: (
-    desktop: 2rem,
-    mobile: 2rem
+        desktop: 2rem,
+        mobile: 4rem
 );
 
 $track-dispatcher-height: (
-    desktop: 40rem,
-    mobile: 6rem
+        desktop: 40rem,
+        mobile: 6rem
 );
+
+$search-lists-height: (
+    desktop: 40rem,
+    mobile: calc(100% - (#{map-get($search-and-toggle-height,mobile)} * 2) - #{map-get($track-dispatcher-height,mobile)} - #{map-get($next-results-height,mobile)})
+);
+
 
 $mobile-min-bp: 375px + 1;
 

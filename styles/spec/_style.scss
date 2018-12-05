@@ -25,7 +25,22 @@ ul {
 
 /*end of .search-section*/
 
+#input-container{
+  display: flex;
+  justify-content: space-between;
+}
+.textInput{
+  flex-grow: 1;
+}
+button.click{
+  width: 6rem;
+}
 
+#toggleSearchResultsViews {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
 
 .search-input-wrap {
   position: relative;
@@ -83,6 +98,7 @@ ul {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  height: auto;
   @include respond-to(min-mobile){
     position: relative;
     flex-direction: row;
@@ -97,7 +113,8 @@ ul {
 
 .waveform-bkg {
   height: 100%;
-  max-width: 36rem;
+  width: calc(100% - 2rem);
+  left: 1rem;
   background-color: #e4e4e4;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -105,6 +122,11 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  @include respond-to(min-mobile){
+    left: 0;
+    width: calc(100% - 1rem);
+  }
 }
 
 
@@ -114,7 +136,6 @@ ul {
   display: inline-block;
   //outline: 4px dashed yellow;
   width: 100%;
-  height: 40rem;
   overflow: hidden;
   @include respond-to(min-mobile){
     width: 40rem;
@@ -129,6 +150,7 @@ ul {
     position: relative;
     bottom: auto;
     height: map-get($track-dispatcher-height,desktop);
+    float: right;
   }
 }
 
@@ -145,6 +167,11 @@ ul {
   color: #ddd;
   background-color: rgba(0,0,0,0.6);
   padding: 4px 12px;
+  pointer-events: none;
+  font-size: 1.2rem;
+  @include respond-to(min-mobile){
+    font-size: 1.4rem;
+  }
 }
 
 .img-wrap > h2:empty {
@@ -168,14 +195,17 @@ li.selected{
   max-height: 100%;
   overflow-y: auto;
   @include respond-to(min-mobile){
-    padding-right: 4rem;
+    //padding-right: 4rem;
   }
 }
 
 .search-lists{
   top: calc(#{map-get($search-and-toggle-height,mobile)} * 2);
+  height: map-get($search-lists-height,mobile);
   @include respond-to(min-mobile){
     top: auto;
+    height: map-get($search-lists-height,desktop);
+    padding-right: 2rem;
   }
 }
 
@@ -234,18 +264,26 @@ li.selected{
 }
 
 .next-results.container{
-  display: block;
-  //outline: 4px dashed yellow;
-  padding: 1rem 0 0 0;
-
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: map-get($track-dispatcher-height,mobile);
+  width: 100%;
   height: map-get($next-results-height,mobile);
   @include respond-to(min-mobile){
+    position: relative;
+    bottom: 0;
+    padding: 3rem 0;
+    height: 2rem;
     height: map-get($next-results-height,desktop);
   }
 }
 
 .next-results__button{
   cursor: pointer;
+  //height: 3rem;
+  border-radius: 0;
   &--inactive{
     pointer-events: none;
     opacity: 0.5;
@@ -268,8 +306,23 @@ li.selected{
 
 #searchResults:empty{
   height: 400px;
+  &:before{
+    content: '';
+    background: repeating-linear-gradient(180deg, #e4e4e4 0, #e4e4e4 4rem, transparent 4rem, transparent 6rem);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    @include respond-to(min-mobile){
+      width: calc(100% - 2rem);
+    }
+  }
   &:after{
-    content: 'Search results here...'
+    content: '';
+    background: repeating-linear-gradient(135deg, #ffffff00 0, #ffffff55 5%, #ffffff55 10%, #ffffff00 15%, #ffffff00 20%);
+    animation: 4.5s moveGradients ease-in-out infinite alternate;
+    height: 100%;
+    width: 150%;
+    position: absolute;
   }
 }
 

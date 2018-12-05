@@ -8,3 +8,12 @@
   from {filter: blur(20px);}
   to {filter: blur(0px);}
 }
+
+@keyframes moveGradients {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
