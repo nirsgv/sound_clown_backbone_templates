@@ -1,0 +1,9 @@
+$devices: (
+  desktop: 136.6rem,
+  mobile: 37.5rem
+);
+$min-breakpoints: (
+  desktop: map-get($devices, desktop) + 0.1,
+  mobile: map-get($devices, mobile) + 0.1
+);
+

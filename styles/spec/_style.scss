@@ -28,12 +28,23 @@ ul {
 #input-container{
   display: flex;
   justify-content: space-between;
+  flex-basis: 50%;
+  padding-right: 2rem;
 }
 .search__input{
   flex-grow: 1;
+  border: none;
+  outline: none;
+  padding-left: 2rem;
+  @include respond-to(min-mobile){
+    padding-left: 1rem;
+  }
 }
-button.click{
-  width: 6rem;
+.search__icon{
+  color: $default-icon-color;
+}
+.search__button{
+  flex-grow: 0;
 }
 
 #toggleSearchResultsViews {
@@ -51,7 +62,7 @@ button.click{
   bottom: -1.4rem;
   left: 1rem;
   font-size: 0.9rem;
-  color: #444;
+  color: $list-text-color;
   &[visible="false"]{
     display: none;
   }
@@ -60,7 +71,7 @@ button.click{
 .animated-cloned-element{
   z-index: 3;
   opacity: 0.75;
-  color: #888;
+  color: $default-icon-color;
   transition: all 0.5s ease-out;
   animation-name: fade-out;
   animation-timing-function: ease-in;
@@ -94,7 +105,7 @@ button.click{
 #search-with-toggle-strip{
   position: fixed;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -115,7 +126,7 @@ button.click{
   height: 100%;
   width: calc(100% - 2rem);
   left: 1rem;
-  background-color: #e4e4e4;
+  background-color: $waveform-color;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -254,8 +265,6 @@ li.selected{
   }
 }
 
-
-
 .toggle-results{
   &__item{
     display: inline-block;
@@ -264,7 +273,7 @@ li.selected{
 }
 
 .next-results.container{
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $results-border;
   display: flex;
   align-items: center;
   position: absolute;
@@ -327,7 +336,7 @@ li.selected{
   }
 }
 #lastSearched > li {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
   height: 6rem;
   margin-bottom: 0;
   display: flex;

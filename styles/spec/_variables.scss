@@ -1,11 +1,3 @@
-$devices: (
-  desktop: 136.6rem,
-  mobile: 37.5rem
-);
-$min-breakpoints: (
-  desktop: map-get($devices, desktop) + 0.1,
-  mobile: map-get($devices, mobile) + 0.1
-);
 
 $soundcloud-strip-height: (
     desktop: 16.6rem,
@@ -13,7 +5,7 @@ $soundcloud-strip-height: (
 );
 
 $search-and-toggle-height: (
-    desktop: 2rem,
+    desktop: 3rem,
     mobile: 4rem
 );
 
@@ -33,7 +25,6 @@ $search-lists-height: (
 );
 
 
-$mobile-min-bp: 375px + 1;
 
 $body-bgc: #eee;
 $main-font-family: 'Open Sans', sans-serif;
@@ -45,5 +36,8 @@ $paginate-strip-bkg-color: #ccc;
 $sc-iframe-height: 16.6rem;
 
 $list-text-color: #444;
+$waveform-color: #e4e4e4;
+$results-border: #ccc;
+$default-icon-color: #777;
 $input-border-color: #dfdfdf;
 $input-highlight-border-color: #bbb;
