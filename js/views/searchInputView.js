@@ -57,11 +57,9 @@ define([
                 class="search__button"
                 >
                    <span class="search__text"></span> 
-                    <i class="search__icon icon search">
-                         <svg class="icon" aria-hidden="true" focusable="false">
-                            <use xlink:href="../../assets/img/icons.svg#search"></use>
-                         </svg>    
-                    </i>
+                     <svg class="svg-el-icon" aria-hidden="true" focusable="false">
+                        <use xlink:href="../../assets/img/icons.svg#search"></use>
+                     </svg>    
                 </a>                             
                            </section>`;
             this.$el.prepend(content);

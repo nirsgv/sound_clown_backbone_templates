@@ -48,11 +48,9 @@ define([
                 data-nextHref="${this.model.get('nextHref')}" 
                 class="next-results__button ${this.isButtonActive()}">
                    <span class="next-results__text">Next results</span> 
-                    <i class="next-results__icon icon next">
-                         <svg class="icon" aria-hidden="true" focusable="false">
-                            <use xlink:href="../../assets/img/icons.svg#next"></use>
-                         </svg>    
-                    </i>
+                     <svg class="svg-el-icon" aria-hidden="true" focusable="false">
+                        <use xlink:href="../../assets/img/icons.svg#next"></use>
+                     </svg>    
                 </a>
 
                                         `;

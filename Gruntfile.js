@@ -133,9 +133,9 @@ grunt.initConfig({
     watch: {
         scripts: {
             files: ['src/js/*.js','src/scss/spec/*.scss'],
-            tasks: ['clean', 'jshint', 'uglify', 'htmlhint', 'htmlmin', 'sass', 'csslint', 'cssmin'],
+            tasks: ['clean', 'jshint', 'uglify', 'htmlhint', 'sass', 'htmlmin', 'csslint', 'cssmin'],
             options: {
-                spawn: false,
+                spawn: true,
                // livereload: 1337,
             },
         },
@@ -157,6 +157,6 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 
 // register tasks
 grunt.registerTask('default', [
-        'clean', 'jshint', 'uglify', 'htmlhint', 'htmlmin', 'sass', 'csslint', 'cssmin', 'watch'
+        'clean', 'uglify',  'htmlmin', 'sass', 'csslint', 'cssmin', 'watch'
     ]
 );

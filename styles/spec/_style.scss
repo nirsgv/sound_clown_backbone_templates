@@ -29,7 +29,9 @@ ul {
   display: flex;
   justify-content: space-between;
   flex-basis: 50%;
-  padding-right: 2rem;
+  @include respond-to(min-mobile){
+    padding-right: 2rem;
+  }
 }
 .search__input{
   flex-grow: 1;
@@ -38,6 +40,7 @@ ul {
   padding-left: 2rem;
   @include respond-to(min-mobile){
     padding-left: 1rem;
+    border-radius: 5rem 0 0 5rem;
   }
 }
 .search__icon{
@@ -45,6 +48,16 @@ ul {
 }
 .search__button{
   flex-grow: 0;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 6rem;
+  background-color: #aaa;
+  color: #fff;
+  @include respond-to(min-mobile){
+    border-radius: 0 5rem 5rem 0;
+  }
 }
 
 #toggleSearchResultsViews {
@@ -92,13 +105,14 @@ ul {
   margin: 0;
   width: 100%;
   height: calc(100vh - #{map-get($soundcloud-strip-height,mobile)});
-  position: fixed;
+  position: map-deep-get($main, position, mobile);
+  max-width: map-deep-get($main, max-width, mobile);
   @include respond-to(min-mobile){
-    position: relative;
+    position: map-deep-get($main, position, desktop);
     height: auto;
     margin: 2rem auto 0 auto;
     width: auto;
-    max-width: 80rem;
+    max-width: map-deep-get($main, max-width, desktop);
   }
 }
 
@@ -303,6 +317,7 @@ li.selected{
     color: #777;
     transition: color 0.1s ease-out;
     padding-right: 1rem;
+    font-size: 1.2rem;
     @include respond-to(min-mobile){
       justify-content: flex-start;
       padding-right: 0;
@@ -389,4 +404,9 @@ li.selected{
 .icon{
   width: 5rem;
   height: 100%;
+}
+
+.svg-el-icon{
+  width: 2em;
+  height: 2em;
 }

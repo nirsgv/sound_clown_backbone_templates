@@ -24,7 +24,16 @@ $search-lists-height: (
     mobile: calc(100% - (#{map-get($search-and-toggle-height,mobile)} * 2) - #{map-get($track-dispatcher-height,mobile)} - #{map-get($next-results-height,mobile)})
 );
 
-
+$main: (
+        max-width: (
+                desktop: 80rem,
+                mobile: 100%
+        ),
+        position: (
+                desktop: relative,
+                mobile: fixed
+        ),
+);
 
 $body-bgc: #eee;
 $main-font-family: 'Open Sans', sans-serif;
